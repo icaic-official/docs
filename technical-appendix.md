@@ -9,10 +9,10 @@ This appendix applies to **both the Individual Contest and the Team Contest**. E
 | Component | Specification |
 | --- | --- |
 | Contest platform | The contest platform provides access to task statements and datasets, solution submission, final submission selection, and evaluation scores. |
-| Operating system | Ubuntu 26.04.1 LTS |
-| Main development environment | JupyterLab 4.6.3, accessed through the internal contest network, with GPU access for model training. |
-| Offline editor | VSCode 1.138.0 on contestant laptops, without direct GPU access or AI assistance. |
-| Python | CPython 3.14.7 |
+| Operating system | Ubuntu 26.04 LTS |
+| Main development environment | JupyterLab 4.6, accessed through the internal contest network, with GPU access for model training. |
+| Offline editor | VSCode 1.138 on contestant laptops, without direct GPU access or AI assistance. |
+| Python | Python 3.14 |
 | Package versions | The provisional pins in section 2; the finalized contest image is identical for all contestants. |
 
 Software versions are provisional pending installation and GPU compatibility validation. The finalized contest image will be published before the contest.
@@ -23,43 +23,43 @@ The contest environment uses the following provisional package versions.
 
 | Category | Package | Version |
 | --- | --- | --- |
-| Core AI/ML | `torch` | 2.14.0 |
-| Core AI/ML | `torchvision` | 0.29.0 |
-| Core AI/ML | `torchaudio` | 2.11.0 |
-| Core AI/ML | `transformers` | 5.17.0 |
-| Core AI/ML | `accelerate` | 1.15.0 |
-| Core AI/ML | `peft` | 0.21.0 |
-| Core AI/ML | `trl` | 1.13.0 |
-| Core AI/ML | `scikit-learn` | 1.9.1 |
-| Core AI/ML | `xgboost` | 3.4.1 |
-| Core AI/ML | `lightgbm` | 4.7.0 |
-| Core AI/ML | `catboost` | 1.2.10 |
-| Core AI/ML | `sentence-transformers` | 6.0.1 |
-| Core AI/ML | `datasets` | 5.0.1 |
-| Core AI/ML | `evaluate` | 0.4.6 |
-| Core AI/ML | `spacy` | 3.8.16 |
-| Core AI/ML | `nltk` | 3.10.3 |
-| Core AI/ML | `gensim` | 4.4.0 |
-| Data processing | `numpy` | 2.5.3 |
-| Data processing | `pandas` | 3.0.6 |
-| Data processing | `scipy` | 1.18.1 |
-| Data processing | `polars` | 1.44.2 |
-| Data processing | `pyarrow` | 25.0.1 |
-| Data processing | `h5py` | 3.16.0 |
-| Computer vision | `opencv-python` | 5.0.0.93 |
-| Computer vision | `Pillow` | 12.3.0 |
-| Computer vision | `scikit-image` | 0.26.0 |
-| Computer vision | `albumentations` | 2.0.8 |
-| Visualization | `matplotlib` | 3.11.2 |
-| Visualization | `seaborn` | 0.13.2 |
-| Visualization | `plotly` | 7.1.0 |
-| Utilities/training | `tqdm` | 4.70.1 |
-| Utilities/training | `joblib` | 1.6.0 |
-| Utilities/training | `tensorboard` | 2.21.0 |
-| Utilities/training | `pytorch-lightning` | 2.6.6 |
-| Utilities/training | `pydantic` | 2.13.5 |
-| Utilities/training | `pyyaml` | 6.0.3 |
-| Development | `jupyterlab` | 4.6.3 |
+| Core AI/ML | `torch` | 2.14 |
+| Core AI/ML | `torchvision` | 0.29 |
+| Core AI/ML | `torchaudio` | 2.11 |
+| Core AI/ML | `transformers` | 5.17 |
+| Core AI/ML | `accelerate` | 1.15 |
+| Core AI/ML | `peft` | 0.21 |
+| Core AI/ML | `trl` | 1.13 |
+| Core AI/ML | `scikit-learn` | 1.9 |
+| Core AI/ML | `xgboost` | 3.4 |
+| Core AI/ML | `lightgbm` | 4.7 |
+| Core AI/ML | `catboost` | 1.2 |
+| Core AI/ML | `sentence-transformers` | 6.0 |
+| Core AI/ML | `datasets` | 5.0 |
+| Core AI/ML | `evaluate` | 0.4 |
+| Core AI/ML | `spacy` | 3.8 |
+| Core AI/ML | `nltk` | 3.10 |
+| Core AI/ML | `gensim` | 4.4 |
+| Data processing | `numpy` | 2.5 |
+| Data processing | `pandas` | 3.0 |
+| Data processing | `scipy` | 1.18 |
+| Data processing | `polars` | 1.44 |
+| Data processing | `pyarrow` | 25.0 |
+| Data processing | `h5py` | 3.16 |
+| Computer vision | `opencv-python` | 5.0 |
+| Computer vision | `Pillow` | 12.3 |
+| Computer vision | `scikit-image` | 0.26 |
+| Computer vision | `albumentations` | 2.0 |
+| Visualization | `matplotlib` | 3.11 |
+| Visualization | `seaborn` | 0.13 |
+| Visualization | `plotly` | 7.1 |
+| Utilities/training | `tqdm` | 4.70 |
+| Utilities/training | `joblib` | 1.6 |
+| Utilities/training | `tensorboard` | 2.21 |
+| Utilities/training | `pytorch-lightning` | 2.6 |
+| Utilities/training | `pydantic` | 2.13 |
+| Utilities/training | `pyyaml` | 6.0 |
+| Development | `jupyterlab` | 4.6 |
 
 The Python standard library may also be used. Installing additional packages during the contest is prohibited. **TensorFlow and Keras are unavailable.**
 
@@ -101,8 +101,8 @@ Required datasets, approved model files, and documentation are provided within t
 
 | Limit | Rule |
 | --- | --- |
-| Notebook runtime | Maximum **20 minutes per submission**, unless the task statement explicitly states otherwise |
-| Submissions | Maximum **60 submissions per task per individual contestant or team**, according to the contest |
+| Notebook runtime | Maximum **10 minutes per submission**, unless the task statement explicitly states otherwise |
+| Submissions | Maximum **15 submissions per task per individual contestant or team**, according to the contest |
 | Submission accounting | All submissions count, including failed submissions, except those affected by a platform-side problem |
 | Concurrent submissions | Permitted; submissions enter a queue and results appear when ready |
 | End of contest | Submissions received before the contestant's deadline continue to run, including queued submissions, after the contest ends |

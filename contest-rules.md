@@ -23,7 +23,7 @@ Each university designates a **Team Leader (TL)** as its non-competing represent
 
 Each university may enter **one team of three contestants**. All three contestants must be undergraduate students enrolled in that university.
 
-Enrollment eligibility is assessed on the date of the first ICAIC contest. If that date is after **1 October 2026**, enrollment status on 1 October 2026 may instead be used when it makes the contestant eligible.
+Enrollment eligibility is assessed on the date of the first ICAIC contest.
 
 ## 2. Individual Contest and Shared Procedures
 
@@ -69,12 +69,15 @@ For example, an RMSE of 2 becomes a score of -2 and ranks above an RMSE of 5, wh
 
 #### Normalization
 
+The baseline earns **0 points**. The target for **100 points** is whichever is higher: 90% of the Scientific Committee's improvement over the baseline, added to the baseline, or the best contestant submission. Scores between the baseline and target scale linearly.
+
 ```text
 Reference_Score = Min_Score + 0.9 × (SC_Solution - Min_Score)
 Max_Score = max(Reference_Score, Max_Submission)
-Norm_Score = 100 × min(1, max(0,
-    (Submission_Score - Min_Score) / (Max_Score - Min_Score)))
+Norm_Score = 100 × (Submission_Score - Min_Score) / (Max_Score - Min_Score)
 ```
+
+Clamp `Norm_Score` to 0–100: values below 0 become 0, and values above 100 become 100.
 
 | Term | Definition |
 | --- | --- |
@@ -82,10 +85,10 @@ Norm_Score = 100 × min(1, max(0,
 | `SC_Solution` | The Scientific Committee solution's higher-is-better score. |
 | `Max_Submission` | The highest valid higher-is-better score across all contestants' submissions evaluated on the relevant dataset, including the contestant's own submissions. For final scoring, this includes only submissions selected for test evaluation. |
 | `Reference_Score` | The baseline score plus 90% of the improvement from the baseline to the Scientific Committee solution. |
-| `Max_Score` | The greater of `Reference_Score` and `Max_Submission`. If there are no valid evaluated submissions, use `Reference_Score`. |
+| `Max_Score` | The target for 100 points: the greater of `Reference_Score` and `Max_Submission`. If there are no valid evaluated submissions, use `Reference_Score`. |
 | `Norm_Score` | The task score after normalization and clamping to the range 0–100. |
 
-For every task, the Scientific Committee guarantees finite baseline and reference scores satisfying **`SC_Solution > Min_Score` on both validation and test data**. Consequently, `Max_Score - Min_Score` is strictly positive, including when no contestant beats the baseline. The reference score lies strictly between the baseline and the committee score, whether the converted scores are positive or negative.
+The Scientific Committee guarantees finite baseline and reference scores with **`SC_Solution > Min_Score` on both validation and test data**. This ensures that the denominator is positive, even if no contestant beats the baseline.
 
 Validation scores and their reference values are computed on validation data. Final test scores, including the baseline, Scientific Committee score, and highest selected submission score used for normalization, are computed on test data. Validation scores are never used as test normalization references.
 
@@ -94,7 +97,7 @@ For example, with submission accuracy 85%, baseline accuracy 60%, Scientific Com
 ```text
 Reference_Score = 60% + 0.9 × (95% - 60%) = 91.5%
 Max_Score = max(91.5%, 90%) = 91.5%
-Norm_Score = 100 × min(1, max(0, (85% - 60%) / (91.5% - 60%)))
+Norm_Score = 100 × (85% - 60%) / (91.5% - 60%)
            = 79.365079…
 Displayed score = 79.3651
 ```
@@ -194,7 +197,7 @@ Cheating is prohibited, including:
 
 All appeals must be submitted by Team Leaders. A TL may appeal for an individual contestant or for the entire team in the Team Contest.
 
-Appeal submission instructions, required information, and deadlines will be announced by the organizers later.
+Appeals may be submitted immediately after each contest ends. The closing deadline will be announced in the event schedule. Submission instructions and required information will be announced separately.
 
 The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL using the contact details supplied with the appeal; the TL must reply as quickly as possible. The committee may arrange a face-to-face meeting with the TL and possibly the affected contestant. Organizers announce the meeting details and timing. Final decisions are shared with the General Assembly at its first meeting after those decisions.
 
@@ -240,4 +243,3 @@ Achievement certificates are awarded to contestants or teams winning official me
 ### 4.4. Hall of Fame
 
 Results, scoreboards, medals, and awards are published on the official ICAIC website. Questions or suggestions about contest rules should be sent to [sc@icaic.sg](mailto:sc@icaic.sg).
-

@@ -4,7 +4,7 @@
 
 ## 1. Topic Classifications and Expected Depth
 
-ICAIC defines its own syllabus. Topics are classified by theoretical and practical knowledge and by depth to support fair task setting at collegiate level.
+Topics are classified by theoretical and practical knowledge and by depth to support fair task setting at collegiate level.
 
 ### Knowledge category
 
@@ -234,7 +234,7 @@ Across all domains, contestants should be able to move from an unfamiliar datase
 
 The contest uses Python and JupyterLab, with PyTorch and scikit-learn as core libraries and identical compute resources for contestants. Internet access and LLM assistance are unavailable. Required data, documentation, and approved models are provided within the contest environment. Software versions and hardware are specified in the [Technical Appendix](technical-appendix.md).
 
-Topics involving language models remain part of the syllabus. They do not imply access to an LLM assistant or external API during the contest. Extended topics require starter material, a provided implementation, a tutorial, or sufficient explanation in the task statement.
+Topics involving language models remain part of the syllabus. They do not imply access to an LLM assistant during the contest. Extended topics require starter material, a provided implementation, a tutorial, or sufficient explanation in the task statement.
 
 ## 15. Recommended Preparation Resources
 
