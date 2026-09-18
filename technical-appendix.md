@@ -1,5 +1,8 @@
 # Technical Appendix
 
+> [!CAUTION]
+> **This appendix is not finalized.** Specifications and limits are provisional. The appendix will be finalized no later than one month before the contest.
+
 **Updated: 18 September 2026.**
 
 This appendix applies to **both the Individual Contest and the Team Contest**. Each team receives the same resources and limits as one individual contestant.
