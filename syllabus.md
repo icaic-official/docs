@@ -4,7 +4,7 @@
 
 ## 1. Topic Classifications and Expected Depth
 
-Topics are classified by theoretical and practical knowledge and by depth to support fair task setting at collegiate level.
+Topics are classified by theoretical and practical knowledge and by depth.
 
 ### Knowledge category
 
@@ -20,8 +20,6 @@ Topics are classified by theoretical and practical knowledge and by depth to sup
 | --- | --- |
 | Core (C) | May be assessed directly without a task-specific tutorial. |
 | Extended (E) | May be assessed when supported by starter material, provided implementation, or sufficient explanation in the task statement. |
-
-An entry such as **B/C** means that both theory and practice are expected at Core level.
 
 ## 2. General Contestant Capabilities
 
@@ -111,7 +109,7 @@ Across all domains, contestants should be able to move from an unfamiliar datase
 | Perceptrons and multilayer networks | Perceptron basics, multilayer perceptrons, universal approximation intuition, and network capacity. | B | C |
 | Activations and losses | ReLU, sigmoid, tanh, softmax, MSE, MAE, cross-entropy, margin losses, and task-appropriate objectives. | B | C |
 | Backpropagation | Forward and backward passes, computational graphs, gradient flow, and common implementation errors. | B | C |
-| Optimization for deep learning | SGD, mini-batches, momentum, Adam/AdamW, learning rates, warmup, schedules, clipping, and convergence behavior. | B | C |
+| Optimization for deep learning | Apply the optimization methods in section 3 to neural networks; learning-rate warmup and gradient clipping. | B | C |
 | Initialization and normalization | Weight initialization, batch normalization, layer normalization, and their effects on training. | B | C |
 | Regularization | Dropout, early stopping, weight decay, augmentation, label smoothing, and model selection. | B | C |
 | Embeddings and pooling | Learned representations for text, images, audio, categories, and graphs; max, average, and attention pooling. | B | C |
@@ -145,7 +143,7 @@ Across all domains, contestants should be able to move from an unfamiliar datase
 | Topic | Expected competency | Category | Level |
 | --- | --- | --- | --- |
 | Image fundamentals | Pixels, channels, color spaces, resizing, interpolation, normalization, and common image formats. | B | C |
-| Convolutional layers | Kernels, feature maps, receptive fields, padding, stride, pooling, and residual architectures. | B | C |
+| Convolutional layers | Apply the convolutional networks in section 7 to images; kernels and feature maps. | B | C |
 | Image classification | Training classifiers, transfer learning, pretrained encoders such as ResNet, and error analysis. | P | C |
 | Object detection | Bounding boxes, IoU, non-maximum suppression, and practical use of YOLO, SSD, and DETR-style models. | B | C |
 | Image segmentation | Semantic/instance segmentation, pixel-wise losses, U-Net-style models, and overlap metrics. | B | C |
@@ -174,7 +172,7 @@ Across all domains, contestants should be able to move from an unfamiliar datase
 | --- | --- | --- | --- |
 | Transformer mechanics | Scaled dot-product attention, multi-head attention, masking, positional encoding, residual connections, and normalization. | B | C |
 | Architecture families | Encoder-only, decoder-only, encoder-decoder, mixture-of-experts intuition, and modality-specific transformers. | T | C |
-| Tokenization and context | Subword tokenization, context windows, truncation, padding, attention masks, and prompt construction. | B | C |
+| Tokenization and context | Apply the tokenization methods in section 10 to foundation models; context windows, truncation, attention masks, and prompt construction. | B | C |
 | Pretraining objectives | Next-token prediction, masked modeling, denoising, instruction tuning, and their behavioral consequences. | T | C |
 | Prompt engineering | Zero-shot/few-shot prompting, role and instruction design, examples, decomposition, context selection, and prompt evaluation. | B | C |
 | Structured generation and decoding | Greedy, beam, sampling, temperature/top-p, constrained outputs, validation, repair, and stopping criteria. | B | C |
@@ -224,17 +222,12 @@ Across all domains, contestants should be able to move from an unfamiliar datase
 
 - Tasks may require writing code, fitting models, running inference, producing predictions, analyzing results, or combining these activities.
 - A task may span multiple data modalities, including tabular data, images, text, audio, video, time series, sensor streams, and graphs.
-- Core topics may be assessed directly. Extended topics should be supported by a concise tutorial, starter code, or sufficient task-specific explanation.
 - Contestants should not be expected to memorize obscure library APIs; task design should reward reasoning, modeling, data handling, and experimentation.
 - All required checkpoints, datasets, documentation, and software should be available within the official contest environment.
 - Tasks should permit meaningful partial solutions, including simple baselines, feature-based methods, classical ML, and progressively stronger models where appropriate.
-- Evaluation should use clearly defined metrics, robust test data with both inputs and labels hidden from contestants, and splits that prevent identity, temporal, group, or near-duplicate leakage.
+- Evaluation should use clearly defined metrics, test data with both inputs and labels hidden from contestants, and splits that prevent identity, temporal, group, or near-duplicate leakage.
 
-### Environment alignment
-
-The contest uses Python and JupyterLab, with PyTorch and scikit-learn as core libraries and identical compute resources for contestants. Internet access and LLM assistance are unavailable. Required data, documentation, and approved models are provided within the contest environment. Software versions and hardware are specified in the [Technical Appendix](technical-appendix.md).
-
-Topics involving language models remain part of the syllabus. They do not imply access to an LLM assistant during the contest. Extended topics require starter material, a provided implementation, a tutorial, or sufficient explanation in the task statement.
+See the [Technical Appendix](technical-appendix.md) for the contest environment and permitted resources.
 
 ## 15. Recommended Preparation Resources
 
@@ -246,7 +239,6 @@ These resources support preparation. The ICAIC topic tables above define the exa
 | *The Elements of Statistical Learning* — Trevor Hastie, Robert Tibshirani, and Jerome Friedman | Statistical learning, regularization, model selection, kernels, trees, ensembles, and unsupervised methods. |
 | *Reinforcement Learning: An Introduction* — Richard S. Sutton and Andrew G. Barto | Sequential decision making, value-based methods, policy methods, and exploration. |
 | *Deep Learning* — Ian Goodfellow, Yoshua Bengio, and Aaron Courville | Neural networks, optimization, regularization, convolutional and sequence models, and representation learning. |
-| Modern transformer and foundation-model literature/documentation | Attention, transformers, LLM training and adaptation, retrieval, agents, multimodality, evaluation, and safety. |
 
 ### Supplementary resources
 
@@ -254,7 +246,6 @@ These resources support preparation. The ICAIC topic tables above define the exa
 - Murphy, K. P. (2022). *Probabilistic Machine Learning: An Introduction*. MIT Press. [Book website](https://probml.github.io/pml-book/book1.html); [publisher page](https://mitpress.mit.edu/9780262046824/probabilistic-machine-learning).
 - Murphy, K. P. (2023). *Probabilistic Machine Learning: Advanced Topics*. MIT Press. [Book website](https://probml.github.io/pml-book/book2.html); [publisher page](https://mitpress.mit.edu/9780262048439/probabilistic-machine-learning).
 - Jurafsky, D., & Martin, J. H. (2026). *Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models*. Third-edition online manuscript, released 6 January 2026. [Manuscript website](https://web.stanford.edu/~jurafsky/slp3).
-- Jurafsky, D., & Martin, J. H. (2009). *Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition*. Second edition. Pearson Prentice Hall. ISBN: 978-0-13-187321-6.
 - Hamilton, W. L. (2020). *Graph Representation Learning*. Springer. [DOI](https://doi.org/10.1007/978-3-031-01588-5); [author's book website](https://www.cs.mcgill.ca/~wlh/grl_book); [author-provided PDF](https://www.cs.mcgill.ca/~wlh/grl_book/files/GRL_Book.pdf).
 
 ### Library documentation

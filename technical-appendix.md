@@ -2,7 +2,7 @@
 
 **Updated: 18 September 2026.**
 
-This appendix applies to **both the Individual Contest and the Team Contest**. Each team shares **one organizer-provided computer or laptop** and receives the same software environment, GPU allocation, and evaluation limits as one individual contestant. Submission quotas are per individual contestant in the Individual Contest and per team in the Team Contest.
+This appendix applies to **both the Individual Contest and the Team Contest**. Each team receives the same resources and limits as one individual contestant.
 
 ## 1. Platform and Development Environment
 
@@ -73,11 +73,11 @@ Task models and pretrained checkpoints may be used only as specified in section 
 
 ### 4.1. Laptops
 
-Each individual contestant receives an Ubuntu laptop without a GPU; each team shares one such computer or laptop in the Team Contest. GPU training and execution take place through JupyterLab on the training and evaluation machines.
+In the Individual Contest, each contestant receives one Ubuntu laptop without a GPU. In the Team Contest, each team receives **one Ubuntu laptop without a GPU, shared by all three contestants**. GPU training and execution take place through JupyterLab on the training and evaluation machines.
 
 ### 4.2. Training and Evaluation Machines
 
-Training and evaluation use **Amazon EC2 `g6.xlarge`** instances. Each team receives the same compute allocation as one individual contestant:
+Training and evaluation use **Amazon EC2 `g6.xlarge`** instances:
 
 | Resource | Specification |
 | --- | --- |
@@ -89,13 +89,13 @@ Training and evaluation use **Amazon EC2 `g6.xlarge`** instances. Each team rece
 
 ### 4.3. Pretrained Models
 
-The approved pretrained-model list will be published later. Approved checkpoints and their required supporting files will be pre-cached in the contest environment. Contestants may use only models explicitly provided by the organizers. External model downloads are prohibited. Documentation for approved models will be available offline.
+The approved pretrained-model list will be published before the contest. Approved checkpoints and their required supporting files will be pre-cached in the contest environment. Contestants may use only models explicitly provided by the organizers. External model downloads are prohibited. Documentation for approved models will be available offline.
 
 ## 5. Network Access and Offline Resources
 
-**There is no internet access during the contest.** Contestant laptops, training environments, and the grading system can access only internal contest services. There is no external website whitelist.
+**There is no internet access during the contest.** Contestant laptops, training environments, and the grading system can access only internal contest services.
 
-Required datasets, approved model files, and documentation are provided within the contest environment. External preparation resources are not accessible during the contest.
+Required datasets, approved model files, and documentation are provided within the contest environment. Messaging, collaboration, and file-sharing services are prohibited. Attempts to bypass platform restrictions are prohibited.
 
 ## 6. Evaluation Limits
 
@@ -107,11 +107,4 @@ Required datasets, approved model files, and documentation are provided within t
 | Concurrent submissions | Permitted; submissions enter a queue and results appear when ready |
 | End of contest | Submissions received before the contestant's deadline continue to run, including queued submissions, after the contest ends |
 
-The runtime limit applies to each evaluation run of a submission, including any training, model loading, preprocessing, and inference performed within that run. It does not impose a cumulative 20-minute training budget on the contestant's development environment.
-
-## 7. Additional Rules
-
-- Access to networks outside the internal contest services is prohibited.
-- Messaging, collaboration, and file-sharing services are prohibited.
-- Attempts to bypass platform restrictions are prohibited.
-- The approved pretrained-model list and finalized contest image will be published before the contest.
+The runtime limit applies to each evaluation run of a submission, including any training, model loading, preprocessing, and inference performed within that run.

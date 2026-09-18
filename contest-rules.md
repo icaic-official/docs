@@ -29,7 +29,7 @@ Enrollment eligibility is assessed on the date of the first ICAIC contest.
 
 Contestants use organizer-provided computers, must not communicate during the contest, and are scored individually. Medal allocations are based only on Individual Contest results. Tasks follow the [ICAIC Syllabus](syllabus.md).
 
-Sections 2.2–2.11 also apply to the Team Contest, with the team acting as one participant for submissions, feedback, final submission selection, and limits. Team-specific scoring and permitted communication within the team are described in section 3. Technical assistance, extensions, conduct, and appeal procedures are shared by both contests.
+Sections 2.2–2.11 also apply to the Team Contest, with the team acting as one participant for submissions, feedback, final submission selection, and limits. Team members may communicate and cooperate as described in section 3.
 
 ### 2.1. Contest Schedule
 
@@ -42,11 +42,9 @@ Sections 2.2–2.11 also apply to the Team Contest, with the team acting as one 
 ### 2.2. Contest Environment
 
 - The programming language is Python, with development in a Jupyter Notebook environment.
-- PyTorch and scikit-learn are the core AI/ML libraries. TensorFlow and Keras are unavailable. Additional packages cannot be downloaded during the contest.
 - Contestants receive identical local machines, subject to minor technical differences, and identical GPU resources.
-- Tasks may involve writing code, fitting models on training data, and running inference on test data.
 - Each task may require submission of code, trained models, model predictions, or a combination of these.
-- Contestant laptops, training environments, and the grading system have no internet access during the contest. Only internal contest services are accessible. Approved models, datasets, and documentation are provided within the contest environment. External downloads and APIs are prohibited.
+- Contestant laptops, training environments, and the grading system have no internet access during the contest. Only internal contest services are accessible. External downloads and APIs are prohibited.
 - No LLM assistant is provided. LLM-based chat assistants, copilots, browser assistants, and AI coding agents are prohibited.
 - Available packages, hardware, approved pretrained models, editors, and offline resources are specified in the [Technical Appendix](technical-appendix.md).
 - Screen activity may be monitored live and recorded.
@@ -77,7 +75,7 @@ Max_Score = max(Reference_Score, Max_Submission)
 Norm_Score = 100 × (Submission_Score - Min_Score) / (Max_Score - Min_Score)
 ```
 
-Clamp `Norm_Score` to 0–100: values below 0 become 0, and values above 100 become 100.
+Clamp `Norm_Score` to 0–100.
 
 | Term | Definition |
 | --- | --- |
@@ -90,7 +88,7 @@ Clamp `Norm_Score` to 0–100: values below 0 become 0, and values above 100 bec
 
 The Scientific Committee guarantees finite baseline and reference scores with **`SC_Solution > Min_Score` on both validation and test data**. This ensures that the denominator is positive, even if no contestant beats the baseline.
 
-Validation scores and their reference values are computed on validation data. Final test scores, including the baseline, Scientific Committee score, and highest selected submission score used for normalization, are computed on test data. Validation scores are never used as test normalization references.
+Validation scores and their reference values are computed on validation data. Final test scores, including the baseline, Scientific Committee score, and highest selected submission score used for normalization, are computed on test data.
 
 For example, with submission accuracy 85%, baseline accuracy 60%, Scientific Committee accuracy 95%, and highest contestant accuracy 90% on the same dataset:
 
@@ -102,7 +100,7 @@ Norm_Score = 100 × (85% - 60%) / (91.5% - 60%)
 Displayed score = 79.3651
 ```
 
-For a lower-is-better metric, baseline RMSE 5 and committee RMSE 2 become scores -5 and -2. The reference score is `-5 + 0.9 × (-2 - (-5)) = -2.3`, corresponding to RMSE 2.3. This requires 90% of the committee's improvement over the baseline, consistently with higher-is-better metrics.
+For a lower-is-better metric, baseline RMSE 5 and committee RMSE 2 become scores -5 and -2. The reference score is `-5 + 0.9 × (-2 - (-5)) = -2.3`, corresponding to RMSE 2.3.
 
 All raw metrics, conversions, normalization, and summation use IEEE 754 double precision with no intermediate rounding. Reports, scoreboards, and certificates display four decimal places. Rankings, submission-selection comparisons, and medal boundaries use full-precision values.
 
@@ -203,16 +201,10 @@ The Scientific Committee reviews all appeals. If it needs more information, it c
 
 ## 3. Team Contest
 
-The Team Contest is an official, creative, AI-oriented contest for university teams.
-
 - Team members sit together and may communicate and cooperate.
-- Each team shares **one organizer-provided computer or laptop** and receives the same software environment, GPU allocation, and evaluation limits as one individual contestant, as specified in the Technical Appendix. Internet access is not available.
+- Each team receives **exactly one organizer-provided computer or laptop, shared by all three contestants**. The team receives the same software environment, GPU allocation, and evaluation limits as one individual contestant, as specified in the [Technical Appendix](technical-appendix.md).
 - Teams must not communicate with other teams or with people outside the contest hall.
-- The allowed and prohibited items are the same as for the Individual Contest, including the approval requirements for personal peripherals and medical items.
-- Scoring is task-specific and described in the task statements.
-- The highest-performing teams receive Team Contest trophies at the closing ceremony. No Team Contest medals are awarded.
-
-The duration and task count are listed in section 2.1. Submission limits and final selection slots apply to the whole team, not separately to each member.
+- Scoring and procedures are the same as in the Individual Contest, with each team acting as one participant.
 
 ## 4. Medals, Awards, Trophies and Certificates
 
@@ -224,7 +216,7 @@ If contestants tie at a medal boundary, all contestants with that full-precision
 
 ### 4.2. Team Contest
 
-The top teams by Team Contest score receive **Team Contest trophies**. No medals are awarded for the Team Contest. Teams tied at an award boundary all receive the same award.
+The top teams by Team Contest score receive **Team Contest trophies** at the closing ceremony. No medals are awarded for the Team Contest. Teams tied at an award boundary all receive the same award.
 
 The event trophy remains with the organizer for use in future editions. Further award arrangements will be announced later.
 
@@ -240,6 +232,6 @@ Each certificate includes the participant's name, role, and country. It is signe
 
 Achievement certificates are awarded to contestants or teams winning official medals, awards, or trophies. Each includes the contestant's or team's name, country, and precise achievement, such as a medal, award, trophy, or honourable mention. Certificates are signed by ICAIC's Executive Director and the Chair of the Scientific Committee.
 
-### 4.4. Hall of Fame
+### 4.4. Publication of Results
 
 Results, scoreboards, medals, and awards are published on the official ICAIC website. Questions or suggestions about contest rules should be sent to [sc@icaic.sg](mailto:sc@icaic.sg).
