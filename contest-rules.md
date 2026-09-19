@@ -106,7 +106,7 @@ Clamp `Norm_Score` to 0–100.
 | --- | --- |
 | `Min_Score` | The baseline solution's higher-is-better score. |
 | `SC_Score` | The Scientific Committee solution's higher-is-better score. |
-| `Max_Submission` | The highest valid higher-is-better score across all contestants' submissions evaluated on the relevant dataset. For final scoring, this includes only submissions selected for test evaluation. |
+| `Max_Submission` | For validation, the highest valid higher-is-better validation score across all participants' evaluated submissions. For test normalization, the highest valid higher-is-better test score across only the submissions selected for test evaluation under Section 2.4, including automatic selections. |
 | `Reference_Score` | The committee-derived reference target. |
 | `Max_Score` | The target for 100 points. If there are no valid evaluated submissions, use `Reference_Score`. |
 | `Norm_Score` | The normalized task score. |
@@ -171,7 +171,7 @@ After the contest, the grading system evaluates the selected submissions on hidd
 
 The Validation Leaderboard is public, showing contestant or team identities, their best normalized validation score per task, and overall rankings by the sum of those scores.
 
-It updates live until one hour before the scheduled end of each contest, then stays frozen until after the closing ceremony. During the freeze, contestants can still see their own submission results and scores privately.
+It updates live until one hour before the scheduled end of each contest, then stays frozen until after the closing ceremony. During the freeze, private submission feedback shows evaluation status and raw validation metrics only. Updated normalized scores and normalization targets are withheld until the leaderboard is unfrozen.
 
 #### Selecting submissions for final scoring
 
