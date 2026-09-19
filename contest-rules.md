@@ -228,32 +228,26 @@ Appeals may be submitted immediately after each contest ends. The closing deadli
 
 The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL, who must reply promptly. The committee may meet the TL, and possibly the affected contestant, in person. Final decisions are shared with the General Assembly at its first meeting after those decisions.
 
-## 3. Medals, Awards, Trophies and Certificates
+## 3. Medals, Awards and Certificates
 
-### 3.1. Individual Contest
+### 3.1. Medals
 
-Medals are awarded solely on total Individual Contest scores. The planned allocation is **4 gold, 4 silver, and 4 bronze medals**.
+The Individual Contest and Team Contest each have a planned allocation of **4 gold, 4 silver, and 4 bronze medals**, awarded to contestants and teams respectively based on total scores in that contest.
 
-If contestants tie at a medal boundary, all contestants with that full-precision total score receive the same higher medal. Medal counts may therefore exceed the planned allocation; no contestant receives more than one medal.
+In either contest, contestants or teams tied at a medal boundary on full-precision total scores receive the same higher medal. Medal counts may therefore exceed the planned allocation. Each contestant may receive at most one Individual Contest medal, and each team at most one Team Contest medal.
 
-### 3.2. Team Contest
+### 3.2. Certificates
 
-The top teams by Team Contest score receive **Team Contest trophies** at the closing ceremony. No medals are awarded for the Team Contest. Teams tied at an award boundary all receive the same award.
-
-The event trophy remains with the organizer for use in future editions. Further award arrangements will be announced later.
-
-### 3.3. Certificates
-
-#### 3.3.1. Participation Certificate
+#### 3.2.1. Participation Certificate
 
 Participation certificates are awarded to everyone officially involved, including contestants, team leaders, guests, volunteers, Scientific Committee and board members, host scientific, technical, and organizing committee members, and sponsors.
 
 Each certificate includes the participant's name, role, and country. It is signed by ICAIC's Executive Director, with additional signatures at ICAIC's discretion.
 
-#### 3.3.2. Achievement Certificate
+#### 3.2.2. Achievement Certificate
 
-Achievement certificates are awarded to contestants or teams winning official medals, awards, or trophies. Each includes the contestant's or team's name, country, and achievement, such as a medal, award, trophy, or honorable mention. Certificates are signed by ICAIC's Executive Director and the Chair of the Scientific Committee.
+Achievement certificates are awarded to contestants or teams winning official medals or awards. Each includes the contestant's or team's name, country, and achievement, such as a medal, award, or honorable mention. Certificates are signed by ICAIC's Executive Director and the Chair of the Scientific Committee.
 
-### 3.4. Publication of Results
+### 3.3. Publication of Results
 
 Results, scoreboards, medals, and awards are published on the official ICAIC website. Questions or suggestions about contest rules should be sent to [sc@icaic.sg](mailto:sc@icaic.sg).
