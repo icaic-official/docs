@@ -4,6 +4,8 @@
 
 These rules cover the Individual Contest and Team Contest of the International Collegiate Artificial Intelligence Contest (ICAIC). They may be updated before the event to address omissions, inconsistencies, or new information, without substantial changes to the format.
 
+The **Scientific Committee (SC)** has final authority to interpret these rules, adjudicate unforeseen situations, determine results, and decide appeals.
+
 Each university designates a **Team Leader (TL)** as its non-competing representative, separate from the three contestants. The TL handles administrative matters and appeals, and ensures that the contestants understand and follow the rules. The TL does not participate in solving contest tasks or assist contestants during either contest.
 
 ## 1. General Requirements
@@ -25,6 +27,14 @@ Each university may enter **one team of three contestants**. All three contestan
 
 Enrollment eligibility is assessed on the date of the first ICAIC contest.
 
+At on-site registration, contestants must present photo identification and proof of enrollment covering that date. A letter in English signed by a university official is sufficient proof of enrollment.
+
+### 1.3. Team Rosters and Attendance
+
+The three contestants on the university's accepted roster must remain the same for both contests. Reserves and substitutions are not permitted after the roster is accepted. If a contestant cannot or will not participate, the TL must promptly notify the SC. The SC decides the consequences for participation in either contest, including whether the remaining contestants may compete individually.
+
+Contestants must attend all events designated as required in the event schedule. Absence may result in disqualification and forfeiture of awards. TLs must be available during registration, practice, both contests, and the awards ceremony. Contestants and TLs must follow organizers' instructions.
+
 ## 2. Contest Format and Procedures
 
 Tasks follow the [ICAIC Syllabus](syllabus.md).
@@ -43,13 +53,13 @@ In these rules, “data” includes datasets, problem instances, and task enviro
 
 #### Individual Contest
 
-Contestants use organizer-provided laptops, must not communicate during the contest, and are scored individually.
+Contestants use organizer-provided laptops and are scored individually. During the contest, they may communicate only with authorized contest personnel through the procedures in Sections 2.7 and 2.8.
 
 #### Team Contest
 
 - Team members sit together and may communicate and cooperate.
 - Each team receives **exactly one** organizer-provided laptop, shared by all three contestants. The team receives the same software environment, GPU allocation, and evaluation limits as one individual contestant, as specified in the [Technical Appendix](technical-appendix.md).
-- Teams must not communicate with other teams or with people outside the contest hall.
+- During the contest, contestants may communicate only with their teammates and authorized contest personnel through the procedures in Sections 2.7 and 2.8.
 
 ### 2.2. Contest Environment
 
@@ -105,6 +115,8 @@ The Scientific Committee guarantees finite baseline and reference scores with **
 
 Validation scores and their reference values are computed on validation data. Final test scores, including the baseline, Scientific Committee score, and highest selected submission score used for normalization, are computed on test data.
 
+If a contestant or team is disqualified from a contest, their submissions are excluded from that contest's normalization. The grading system recalculates the affected validation and test normalization targets, all affected scores and totals, rankings, and medal allocations using the remaining eligible participants. Published results are corrected accordingly.
+
 **Higher is better (accuracy).** With submission accuracy 85%, baseline accuracy 60%, Scientific Committee accuracy 95%, and best contestant accuracy 90% on the same dataset:
 
 ```text
@@ -138,6 +150,12 @@ All raw metrics, conversions, normalization, and summation use IEEE 754 double p
 A submission that times out, exceeds memory limits, crashes, produces malformed output, or yields a non-finite metric receives **0 points**, without applying metric conversion or normalization. A task with no submission receives **0 points**. Platform-side failures are corrected and the affected evaluations rerun; they do not count against the submission limit.
 
 A contestant's final task score is the **higher normalized test score of their two selected submissions**. If only one submission is available, its test score counts; if neither produces a valid result, the task score is 0.
+
+#### Final ranking and ties
+
+Participants are ranked by higher full-precision total test score, then lower total submission time. Remaining ties share a rank.
+
+For each task where a selected submission beats the test baseline, count the time from contest start until the selected submission earning the final task score is received by the contest system. If both earn that score, use the submission received earlier. Sum these times across tasks. Other tasks contribute no time, and failed submissions incur no time penalty.
 
 ### 2.4. Feedback and Final Submission Selection
 
@@ -193,6 +211,8 @@ Contestants must be seated at least 10 minutes before the start. They must not t
 
 ### 2.7. Clarification Requests
 
+Task statements are in English. During the contest, contestants must use English when communicating with contest officials, and officials will respond in English.
+
 Questions about task details, rules, or grading may be submitted to the Scientific Committee through the contest system or written forms. Responses may be:
 
 - Yes or no.
@@ -220,7 +240,7 @@ The Scientific Committee may grant an extension before or after the scheduled en
 Cheating is prohibited, including:
 
 - Tampering with the contest system or attempting to breach the scoring system.
-- Communicating, directly or indirectly, with other contestants or with people outside the contest hall during the Individual Contest, or with other teams or with people outside the contest hall during the Team Contest.
+- Communicating with unauthorized people during the contest.
 - Bringing prohibited items (see Section 2.5) into the contest hall.
 - Attempting unauthorized access to test data.
 
@@ -230,15 +250,15 @@ All appeals must be submitted by Team Leaders. A TL may appeal for an individual
 
 Appeals may be submitted immediately after each contest ends. The closing deadline will be announced in the event schedule. Submission instructions and required information will be announced separately.
 
-The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL, who must reply promptly. The committee may meet the TL, and possibly the affected contestant, in person. Final decisions are shared with the General Assembly at its first meeting after those decisions.
+The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL, who must reply promptly. The committee may meet the TL, and possibly the affected contestant, in person. The SC's decisions on appeals are final. They are shared with the General Assembly at its first meeting after those decisions for information, not further approval or review.
 
 ## 3. Medals, Awards and Certificates
 
 ### 3.1. Medals
 
-The Individual Contest and Team Contest each have a planned allocation of **4 gold, 4 silver, and 4 bronze medals**, awarded to contestants and teams respectively based on total scores in that contest.
+The Individual Contest and Team Contest each have a planned allocation of **4 gold, 4 silver, and 4 bronze medals**, awarded to contestants and teams respectively based on the final ranking in that contest.
 
-In either contest, contestants or teams tied at a medal boundary on full-precision total scores receive the same higher medal. Medal counts may therefore exceed the planned allocation. Each contestant may receive at most one Individual Contest medal, and each team at most one Team Contest medal.
+In either contest, contestants or teams still tied at a medal boundary after the submission-time tiebreaker receive the same higher medal. Medal counts may therefore exceed the planned allocation. Each contestant may receive at most one Individual Contest medal, and each team at most one Team Contest medal.
 
 ### 3.2. Certificates
 
