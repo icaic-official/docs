@@ -25,13 +25,13 @@ Each university may enter **one team of three contestants**. All three contestan
 
 Enrollment eligibility is assessed on the date of the first ICAIC contest.
 
-## 2. Individual Contest and Shared Procedures
+## 2. Contest Format and Procedures
 
-Contestants use organizer-provided computers, must not communicate during the contest, and are scored individually. Tasks follow the [ICAIC Syllabus](syllabus.md).
+Tasks follow the [ICAIC Syllabus](syllabus.md).
 
-Sections 2.2–2.11 also apply to the Team Contest, with the team acting as one participant for submissions, feedback, final submission selection, and limits. Team members may communicate and cooperate as described in section 3.
+The procedures below apply to both contests, with each team acting as one participant for submissions, scoring, feedback, final submission selection, and limits in the Team Contest.
 
-### 2.1. Contest Schedule
+### 2.1. Contest Format and Schedule
 
 | Session | Format |
 | --- | --- |
@@ -39,10 +39,20 @@ Sections 2.2–2.11 also apply to the Team Contest, with the team acting as one 
 | Individual Contest | 3 tasks in 6 hours. |
 | Team Contest | 2–3 tasks in 6 hours, solved jointly by the three contestants. |
 
+#### Individual Contest
+
+Contestants use organizer-provided laptops, must not communicate during the contest, and are scored individually.
+
+#### Team Contest
+
+- Team members sit together and may communicate and cooperate.
+- Each team receives **exactly one** organizer-provided laptop, shared by all three contestants. The team receives the same software environment, GPU allocation, and evaluation limits as one individual contestant, as specified in the [Technical Appendix](technical-appendix.md).
+- Teams must not communicate with other teams or with people outside the contest hall.
+
 ### 2.2. Contest Environment
 
 - The programming language is Python, with development in a Jupyter Notebook environment. The Python environment cannot be changed during the contest.
-- Contestants receive identical local machines, subject to minor technical differences, and identical GPU resources.
+- Contestants receive identical laptops, subject to minor technical differences, and identical GPU resources.
 - Each task may require submission of code, trained models, model predictions, or a combination of these.
 - Contestant laptops, training environments, and the grading system have no internet access during the contest. Only internal contest services are accessible. External downloads and APIs are prohibited.
 - Messaging, collaboration, and file-sharing services are prohibited. Attempts to bypass platform restrictions are prohibited.
@@ -173,7 +183,7 @@ Submissions received before the deadline continue to run even if they are queued
 
 ### 2.6. Starting the Contest
 
-Contestants must be seated at least 10 minutes before the start. They must not touch workstations or tools until instructed by the organizers.
+Contestants must be seated at least 10 minutes before the start. They must not touch laptops or tools until instructed by the organizers.
 
 ### 2.7. Clarification Requests
 
@@ -189,13 +199,13 @@ The Scientific Committee may decline ambiguous or unclear questions, or question
 
 ### 2.8. Technical Assistance Requests
 
-For computer, network, or other technical problems, raise the colored card as instructed by the organizers. Assistance staff address technical issues but do not answer task questions.
+For laptop, network, or other technical problems, raise the colored card as instructed by the organizers. Assistance staff address technical issues but do not answer task questions.
 
 ### 2.9. Ending the Contest
 
 Warnings are given 15, 5, and 1 minute before the end. When the contest ends, contestants must stop immediately and wait for instructions to leave their desks.
 
-Substantial technical problems may justify extra time, decided case by case. Contestants must report an issue immediately through a clarification request or, if their computer or network is unavailable, by raising the colored card and notifying assistance staff.
+Substantial technical problems may justify extra time, decided case by case. Contestants must report an issue immediately through a clarification request or, if their laptop or network is unavailable, by raising the colored card and notifying assistance staff.
 
 The Scientific Committee may grant an extension before or after the scheduled end, including for incidents reported immediately before the deadline. Contestants must stop at their current deadline and wait for instructions. If an extension is granted, organizers specify when work resumes and the revised deadline. The revised deadline applies to submissions and final-submission selections.
 
@@ -216,38 +226,32 @@ Appeals may be submitted immediately after each contest ends. The closing deadli
 
 The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL; the TL must reply as quickly as possible. The committee may arrange a face-to-face meeting with the TL and possibly the affected contestant. Final decisions are shared with the General Assembly at its first meeting after those decisions.
 
-## 3. Team Contest
+## 3. Medals, Awards, Trophies and Certificates
 
-- Team members sit together and may communicate and cooperate.
-- Each team receives **exactly one organizer-provided computer or laptop, shared by all three contestants**. The team receives the same software environment, GPU allocation, and evaluation limits as one individual contestant, as specified in the [Technical Appendix](technical-appendix.md).
-- Teams must not communicate with other teams or with people outside the contest hall.
-
-## 4. Medals, Awards, Trophies and Certificates
-
-### 4.1. Individual Contest
+### 3.1. Individual Contest
 
 Medals are awarded solely on total Individual Contest scores. The planned allocation is **4 gold, 4 silver, and 4 bronze medals**.
 
 If contestants tie at a medal boundary, all contestants with that full-precision total score receive the same higher medal. Medal counts may therefore exceed the planned allocation; no contestant receives more than one medal.
 
-### 4.2. Team Contest
+### 3.2. Team Contest
 
 The top teams by Team Contest score receive **Team Contest trophies** at the closing ceremony. No medals are awarded for the Team Contest. Teams tied at an award boundary all receive the same award.
 
 The event trophy remains with the organizer for use in future editions. Further award arrangements will be announced later.
 
-### 4.3. Certificates
+### 3.3. Certificates
 
-#### 4.3.1. Participation Certificate
+#### 3.3.1. Participation Certificate
 
 Participation certificates are awarded to everyone officially involved, including contestants, team leaders, guests, volunteers, Scientific Committee and board members, host scientific, technical, and organizing committee members, and sponsors.
 
 Each certificate includes the participant's name, role, and country. It is signed by ICAIC's Executive Director, with additional signatures at ICAIC's discretion.
 
-#### 4.3.2. Achievement Certificate
+#### 3.3.2. Achievement Certificate
 
 Achievement certificates are awarded to contestants or teams winning official medals, awards, or trophies. Each includes the contestant's or team's name, country, and precise achievement, such as a medal, award, trophy, or honourable mention. Certificates are signed by ICAIC's Executive Director and the Chair of the Scientific Committee.
 
-### 4.4. Publication of Results
+### 3.4. Publication of Results
 
 Results, scoreboards, medals, and awards are published on the official ICAIC website. Questions or suggestions about contest rules should be sent to [sc@icaic.sg](mailto:sc@icaic.sg).
