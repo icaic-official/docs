@@ -4,20 +4,20 @@
 
 These rules cover the Individual Contest and Team Contest of the International Collegiate Artificial Intelligence Contest (ICAIC). They may be updated before the event to address omissions, inconsistencies, or new information, without substantial changes to the format.
 
-Each university designates a **Team Leader (TL)** as its non-competing representative, separate from the three contestants. The TL handles administrative matters and appeals and is responsible for ensuring that the contestants understand and comply with the rules. The TL does not participate in solving contest tasks or assist contestants during either contest.
+Each university designates a **Team Leader (TL)** as its non-competing representative, separate from the three contestants. The TL handles administrative matters and appeals, and ensures that the contestants understand and follow the rules. The TL does not participate in solving contest tasks or assist contestants during either contest.
 
 ## 1. General Requirements
 
 ### 1.1. Code of Conduct
 
-- **Respect:** Show respect and consideration, welcome diversity, and support mutual understanding.
-- **Integrity:** Play fairly, avoid deception, and maintain honest competition.
-- **Confidentiality:** Safeguard sensitive information, especially problem statements and solutions.
-- **Professionalism:** Interact with appropriate formality and decorum, respecting fellow competitors and officials.
+- **Respect:** Treat everyone with respect and consideration, and welcome diversity.
+- **Integrity:** Compete fairly and honestly.
+- **Confidentiality:** Keep sensitive information confidential, especially task statements and solutions.
+- **Professionalism:** Be courteous to fellow contestants and officials.
 - **Safety and welfare:** Do not endanger anyone's emotional or physical well-being.
-- **Compliance:** Understand and follow the rules, including contest structure, submission deadlines, and event conduct.
-- **Reporting misconduct:** Promptly report unethical behavior or rule violations.
-- **Enforcement:** Infractions may result in sanctions, including disqualification and exclusion from future participation.
+- **Compliance:** Understand and follow the rules, including contest procedures, submission deadlines, and event conduct.
+- **Reporting misconduct:** Report rule violations or unethical behavior promptly.
+- **Enforcement:** Violations may lead to sanctions, including disqualification and exclusion from future participation.
 
 ### 1.2. Eligibility Criteria
 
@@ -52,14 +52,14 @@ Contestants use organizer-provided laptops, must not communicate during the cont
 ### 2.2. Contest Environment
 
 - The programming language is Python, with development in a Jupyter Notebook environment. The Python environment cannot be changed during the contest.
-- Contestants receive identical laptops, subject to minor technical differences, and identical GPU resources.
+- Every contestant or team receives the same GPU resources for training and evaluation.
 - Each task may require submission of code, trained models, model predictions, or a combination of these.
 - Contestant laptops, training environments, and the grading system have no internet access during the contest. Only internal contest services are accessible. External downloads and APIs are prohibited.
 - Messaging, collaboration, and file-sharing services are prohibited. Attempts to bypass platform restrictions are prohibited.
 - No LLM assistant is provided. LLM-based chat assistants, copilots, browser assistants, and AI coding agents are prohibited, including locally running assistants.
 - Available packages, hardware, approved pretrained models, editors, and offline resources are specified in the [Technical Appendix](technical-appendix.md).
 - Screen activity may be monitored live and recorded.
-- Requests for additional editors or offline documentation may be sent to [sc@icaic.sg](mailto:sc@icaic.sg) up to four weeks before ICAIC starts.
+- Requests concerning the contest environment may be sent to [sc@icaic.sg](mailto:sc@icaic.sg) no later than four weeks before ICAIC starts.
 
 ### 2.3. Scoring
 
@@ -133,7 +133,7 @@ Displayed score = 74.0741
 
 All raw metrics, conversions, normalization, and summation use IEEE 754 double precision with no intermediate rounding. Reports, scoreboards, and certificates display four decimal places. Rankings, submission-selection comparisons, and medal boundaries use full-precision values.
 
-A submission that times out, exceeds memory limits, crashes, produces malformed output, or yields a non-finite metric receives **0 points**, without applying metric conversion or normalization. A task with no submission receives 0 points. Platform-side failures are corrected and the affected evaluations rerun; they do not count against the submission limit.
+A submission that times out, exceeds memory limits, crashes, produces malformed output, or yields a non-finite metric receives **0 points**, without applying metric conversion or normalization. A task with no submission receives **0 points**. Platform-side failures are corrected and the affected evaluations rerun; they do not count against the submission limit.
 
 A contestant's final task score is the **higher normalized test score of their two selected submissions**. If only one submission is available, its test score counts; if neither produces a valid result, the task score is 0.
 
@@ -216,8 +216,8 @@ The Scientific Committee may grant an extension before or after the scheduled en
 Cheating is prohibited, including:
 
 - Tampering with the contest system or attempting to breach the scoring system.
-- Direct or indirect communication with other contestants or people outside the hall during the Individual Contest.
-- Bringing prohibited items into the hall.
+- Communicating, directly or indirectly, with other contestants or with people outside the contest hall during the Individual Contest, or with other teams or with people outside the contest hall during the Team Contest.
+- Bringing prohibited items (see Section 2.5) into the contest hall.
 - Attempting unauthorized access to test data.
 
 ### 2.11. Appeal Process
@@ -226,7 +226,7 @@ All appeals must be submitted by Team Leaders. A TL may appeal for an individual
 
 Appeals may be submitted immediately after each contest ends. The closing deadline will be announced in the event schedule. Submission instructions and required information will be announced separately.
 
-The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL; the TL must reply as quickly as possible. The committee may arrange a face-to-face meeting with the TL and possibly the affected contestant. Final decisions are shared with the General Assembly at its first meeting after those decisions.
+The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL, who must reply promptly. The committee may meet the TL, and possibly the affected contestant, in person. Final decisions are shared with the General Assembly at its first meeting after those decisions.
 
 ## 3. Medals, Awards, Trophies and Certificates
 
@@ -252,7 +252,7 @@ Each certificate includes the participant's name, role, and country. It is signe
 
 #### 3.3.2. Achievement Certificate
 
-Achievement certificates are awarded to contestants or teams winning official medals, awards, or trophies. Each includes the contestant's or team's name, country, and precise achievement, such as a medal, award, trophy, or honourable mention. Certificates are signed by ICAIC's Executive Director and the Chair of the Scientific Committee.
+Achievement certificates are awarded to contestants or teams winning official medals, awards, or trophies. Each includes the contestant's or team's name, country, and achievement, such as a medal, award, trophy, or honorable mention. Certificates are signed by ICAIC's Executive Director and the Chair of the Scientific Committee.
 
 ### 3.4. Publication of Results
 
