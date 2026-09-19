@@ -76,7 +76,7 @@ Submission_Score = Raw_Metric       if higher is better
 Submission_Score = -Raw_Metric      if lower is better
 ```
 
-Apply the same conversion to baseline and Scientific Committee metrics. The Validation Leaderboard uses these higher-is-better scores.
+Apply the same conversion to baseline and Scientific Committee metrics before normalization.
 
 #### Normalization
 
@@ -151,7 +151,9 @@ Tasks use the following data for development and evaluation. Task statements may
 
 After the contest, the grading system evaluates the selected submissions on hidden test data using the task's evaluation procedure.
 
-During the contest, contestants see their own Validation Leaderboard scores per task, the baseline score (`Min_Score`), and the anonymous highest higher-is-better submission score across all contestants (`Max_Submission`). They cannot see other contestants' individual scores or rankings.
+The Validation Leaderboard is public, showing contestant or team identities, their best normalized validation score per task, and overall rankings by the sum of those scores.
+
+It updates live until one hour before the scheduled end of each contest, then stays frozen until after the closing ceremony. During the freeze, contestants can still see their own submission results and scores privately.
 
 #### Selecting submissions for final scoring
 
@@ -160,10 +162,10 @@ Each participant may bookmark or select **up to two distinct submissions per tas
 | Explicitly selected submissions | Submissions evaluated on the hidden test dataset |
 | --- | --- |
 | Two | Both selected submissions. |
-| One | The selected submission and the highest-scoring remaining submission on the Validation Leaderboard. |
-| None | The two highest-scoring submissions on the Validation Leaderboard. |
+| One | The selected submission and the remaining submission with the highest validation score. |
+| None | The two submissions with the highest validation scores. |
 
-Automatic selection considers submissions with valid Validation Leaderboard scores. Ties are broken in favor of the submission received later by the contest system. A selected submission is not chosen again for the second slot. If fewer than two submissions are available, only the available submissions are evaluated.
+Automatic selection uses valid higher-is-better validation scores before normalization. Ties are broken in favor of the submission received later by the contest system. A selected submission is not chosen again for the second slot. If fewer than two submissions are available, only the available submissions are evaluated.
 
 Submissions received before the deadline continue to run even if they are queued or still executing when the contest ends. Automatic selection takes place after their validation evaluations finish. Explicit selections cannot be changed after the contestant's deadline.
 
@@ -173,7 +175,7 @@ Submissions received before the deadline continue to run even if they are queued
 2. TLs may enter to inspect their team's laptops and submissions.
 3. TLs are shown the best selected submission score on the Test Leaderboard for each task, for each of their contestants in the Individual Contest or for their team in the Team Contest, both before and after normalization, without rankings.
 4. TLs share these scores with their contestants to prepare appeals, while keeping them confidential from other teams until the closing ceremony.
-5. Official rankings are withheld until the closing ceremony. Afterward, both leaderboards are published for everyone.
+5. Official test rankings are withheld until the closing ceremony. Afterward, the Validation Leaderboard is unfrozen and both final leaderboards are published for everyone.
 
 ### 2.5. Supplies
 
