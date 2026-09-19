@@ -31,6 +31,8 @@ Tasks follow the [ICAIC Syllabus](syllabus.md).
 
 The procedures below apply to both contests, with each team acting as one participant for submissions, scoring, feedback, final submission selection, and limits in the Team Contest.
 
+In these rules, “data” includes datasets, problem instances, and task environments.
+
 ### 2.1. Contest Format and Schedule
 
 | Session | Format |
@@ -52,9 +54,9 @@ Contestants use organizer-provided laptops, must not communicate during the cont
 ### 2.2. Contest Environment
 
 - The programming language is Python, with development in a Jupyter Notebook environment. The Python environment cannot be changed during the contest.
-- Every contestant or team receives the same GPU resources for training and evaluation.
-- Each task may require submission of code, trained models, model predictions, or a combination of these.
-- Contestant laptops, training environments, and the grading system have no internet access during the contest. Only internal contest services are accessible. External downloads and APIs are prohibited.
+- Every contestant or team receives the same compute resources for solution development and evaluation.
+- Each task may require submission of code, model artifacts, task outputs, or a combination of these, as specified in the task statement.
+- Contestant laptops, development environments, and the grading system have no internet access during the contest. Only internal contest services are accessible. External downloads and APIs are prohibited.
 - Messaging, collaboration, and file-sharing services are prohibited. Attempts to bypass platform restrictions are prohibited.
 - No LLM assistant is provided. LLM-based chat assistants, copilots, browser assistants, and AI coding agents are prohibited, including locally running assistants.
 - Available packages, hardware, approved pretrained models, editors, and offline resources are specified in the [Technical Appendix](technical-appendix.md).
@@ -139,15 +141,15 @@ A contestant's final task score is the **higher normalized test score of their t
 
 ### 2.4. Feedback and Final Submission Selection
 
-Tasks use the following datasets. Task statements may specify different training or validation arrangements.
+Tasks use the following data for development and evaluation. Task statements may specify different development or validation arrangements.
 
-| Dataset | Access during the contest | Purpose |
+| Stage | Access during the contest | Purpose |
 | --- | --- | --- |
-| Training | Data and labels | Train models. |
-| Validation | Data, without labels | Evaluate submissions during the contest and provide feedback for hyperparameter adjustment and model selection. Results form the **Validation Leaderboard**. |
-| Test | Neither inputs nor labels, in all cases | Evaluate selected submissions after the contest. Results form the **Test Leaderboard** and determine official rankings, medals, and awards. |
+| Development | Provided data, including labels where applicable. | Build and improve solutions. |
+| Validation | Data access as specified in the task statement; reference answers remain hidden. | Evaluate submissions and provide feedback for solution improvement and selection. Results form the **Validation Leaderboard**. |
+| Test | Test data and reference answers remain hidden from contestants. | Evaluate selected submissions after the contest. Results form the **Test Leaderboard** and determine official rankings, medals, and awards. |
 
-After the contest, the grading system runs the selected submissions on test inputs and scores their outputs against hidden labels.
+After the contest, the grading system evaluates the selected submissions on hidden test data using the task's evaluation procedure.
 
 During the contest, contestants see their own Validation Leaderboard scores per task, the baseline score (`Min_Score`), and the anonymous highest higher-is-better submission score across all contestants (`Max_Submission`). They cannot see other contestants' individual scores or rankings.
 
@@ -193,7 +195,7 @@ Questions about task details, rules, or grading may be submitted to the Scientif
 
 - Yes or no.
 - A reference to a section of the task statement, contest rules, or appendix.
-- A request to consult the dataset and baseline first when the task description is unclear.
+- A request to consult the data and baseline first when the task description is unclear.
 - A statement that the Python environment cannot be changed during the contest.
 - A request to rephrase the question in yes/no format.
 
