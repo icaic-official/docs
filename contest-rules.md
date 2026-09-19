@@ -1,6 +1,6 @@
 # Contest Rules for ICAIC 2026
 
-**Updated: 18 September 2026.**
+**Updated: 19 September 2026.**
 
 These rules cover the Individual Contest and Team Contest of the International Collegiate Artificial Intelligence Contest (ICAIC). They may be updated before the event to address omissions, inconsistencies, or new information, without substantial changes to the format.
 
@@ -27,7 +27,7 @@ Enrollment eligibility is assessed on the date of the first ICAIC contest.
 
 ## 2. Individual Contest and Shared Procedures
 
-Contestants use organizer-provided computers, must not communicate during the contest, and are scored individually. Medal allocations are based only on Individual Contest results. Tasks follow the [ICAIC Syllabus](syllabus.md).
+Contestants use organizer-provided computers, must not communicate during the contest, and are scored individually. Tasks follow the [ICAIC Syllabus](syllabus.md).
 
 Sections 2.2–2.11 also apply to the Team Contest, with the team acting as one participant for submissions, feedback, final submission selection, and limits. Team members may communicate and cooperate as described in section 3.
 
@@ -41,11 +41,12 @@ Sections 2.2–2.11 also apply to the Team Contest, with the team acting as one 
 
 ### 2.2. Contest Environment
 
-- The programming language is Python, with development in a Jupyter Notebook environment.
+- The programming language is Python, with development in a Jupyter Notebook environment. The Python environment cannot be changed during the contest.
 - Contestants receive identical local machines, subject to minor technical differences, and identical GPU resources.
 - Each task may require submission of code, trained models, model predictions, or a combination of these.
 - Contestant laptops, training environments, and the grading system have no internet access during the contest. Only internal contest services are accessible. External downloads and APIs are prohibited.
-- No LLM assistant is provided. LLM-based chat assistants, copilots, browser assistants, and AI coding agents are prohibited.
+- Messaging, collaboration, and file-sharing services are prohibited. Attempts to bypass platform restrictions are prohibited.
+- No LLM assistant is provided. LLM-based chat assistants, copilots, browser assistants, and AI coding agents are prohibited, including locally running assistants.
 - Available packages, hardware, approved pretrained models, editors, and offline resources are specified in the [Technical Appendix](technical-appendix.md).
 - Screen activity may be monitored live and recorded.
 - Requests for additional editors or offline documentation may be sent to [sc@icaic.sg](mailto:sc@icaic.sg) up to four weeks before ICAIC starts.
@@ -63,11 +64,11 @@ Submission_Score = Raw_Metric       if higher is better
 Submission_Score = -Raw_Metric      if lower is better
 ```
 
-For example, an RMSE of 2 becomes a score of -2 and ranks above an RMSE of 5, which becomes -5. Apply the same conversion to baseline and Scientific Committee metrics. Leaderboard A uses these higher-is-better scores.
+Apply the same conversion to baseline and Scientific Committee metrics. The Validation Leaderboard uses these higher-is-better scores.
 
 #### Normalization
 
-The baseline earns **0 points**. The target for **100 points** is whichever is higher: 90% of the Scientific Committee's improvement over the baseline, added to the baseline, or the best contestant submission. Scores between the baseline and target scale linearly.
+Scores scale linearly from **0 points** at the baseline to **100 points** at the target defined below.
 
 ```text
 Reference_Score = Min_Score + 0.9 × (SC_Solution - Min_Score)
@@ -81,26 +82,42 @@ Clamp `Norm_Score` to 0–100.
 | --- | --- |
 | `Min_Score` | The baseline solution's higher-is-better score. |
 | `SC_Solution` | The Scientific Committee solution's higher-is-better score. |
-| `Max_Submission` | The highest valid higher-is-better score across all contestants' submissions evaluated on the relevant dataset, including the contestant's own submissions. For final scoring, this includes only submissions selected for test evaluation. |
-| `Reference_Score` | The baseline score plus 90% of the improvement from the baseline to the Scientific Committee solution. |
-| `Max_Score` | The target for 100 points: the greater of `Reference_Score` and `Max_Submission`. If there are no valid evaluated submissions, use `Reference_Score`. |
-| `Norm_Score` | The task score after normalization and clamping to the range 0–100. |
+| `Max_Submission` | The highest valid higher-is-better score across all contestants' submissions evaluated on the relevant dataset. For final scoring, this includes only submissions selected for test evaluation. |
+| `Reference_Score` | The committee-derived reference target. |
+| `Max_Score` | The target for 100 points. If there are no valid evaluated submissions, use `Reference_Score`. |
+| `Norm_Score` | The normalized task score. |
 
-The Scientific Committee guarantees finite baseline and reference scores with **`SC_Solution > Min_Score` on both validation and test data**. This ensures that the denominator is positive, even if no contestant beats the baseline.
+The Scientific Committee guarantees finite baseline and reference scores with **`SC_Solution > Min_Score` on both validation and test data**.
 
 Validation scores and their reference values are computed on validation data. Final test scores, including the baseline, Scientific Committee score, and highest selected submission score used for normalization, are computed on test data.
 
-For example, with submission accuracy 85%, baseline accuracy 60%, Scientific Committee accuracy 95%, and highest contestant accuracy 90% on the same dataset:
+**Higher is better (accuracy).** With submission accuracy 85%, baseline accuracy 60%, Scientific Committee accuracy 95%, and best contestant accuracy 90% on the same dataset:
 
 ```text
-Reference_Score = 60% + 0.9 × (95% - 60%) = 91.5%
-Max_Score = max(91.5%, 90%) = 91.5%
-Norm_Score = 100 × (85% - 60%) / (91.5% - 60%)
+Submission_Score = 0.85
+Min_Score = 0.60
+SC_Solution = 0.95
+Max_Submission = 0.90
+Reference_Score = 0.60 + 0.9 × (0.95 - 0.60) = 0.915
+Max_Score = max(0.915, 0.90) = 0.915
+Norm_Score = 100 × (0.85 - 0.60) / (0.915 - 0.60)
            = 79.365079…
 Displayed score = 79.3651
 ```
 
-For a lower-is-better metric, baseline RMSE 5 and committee RMSE 2 become scores -5 and -2. The reference score is `-5 + 0.9 × (-2 - (-5)) = -2.3`, corresponding to RMSE 2.3.
+**Lower is better (RMSE).** With submission RMSE 3, baseline RMSE 5, Scientific Committee RMSE 2, and best contestant RMSE 2.5 on the same dataset:
+
+```text
+Submission_Score = -3
+Min_Score = -5
+SC_Solution = -2
+Max_Submission = -2.5
+Reference_Score = -5 + 0.9 × (-2 - (-5)) = -2.3
+Max_Score = max(-2.3, -2.5) = -2.3
+Norm_Score = 100 × (-3 - (-5)) / (-2.3 - (-5))
+           = 74.074074…
+Displayed score = 74.0741
+```
 
 All raw metrics, conversions, normalization, and summation use IEEE 754 double precision with no intermediate rounding. Reports, scoreboards, and certificates display four decimal places. Rankings, submission-selection comparisons, and medal boundaries use full-precision values.
 
@@ -110,29 +127,29 @@ A contestant's final task score is the **higher normalized test score of their t
 
 ### 2.4. Feedback and Final Submission Selection
 
-Unless a task statement specifies a different training or validation arrangement, Individual and Team Contest tasks use the following datasets. The entire test dataset remains hidden in all cases.
+Tasks use the following datasets. Task statements may specify different training or validation arrangements.
 
 | Dataset | Access during the contest | Purpose |
 | --- | --- | --- |
 | Training | Data and labels | Train models. |
-| Validation | Data, without labels | Evaluate submissions during the contest and provide feedback for hyperparameter adjustment and model selection. Results form **Leaderboard A (Validation)**. |
-| Test | Neither inputs nor labels | Evaluate selected submissions after the contest. Results form **Leaderboard B (Test)** and determine official rankings, medals, and awards. |
+| Validation | Data, without labels | Evaluate submissions during the contest and provide feedback for hyperparameter adjustment and model selection. Results form the **Validation Leaderboard**. |
+| Test | Neither inputs nor labels, in all cases | Evaluate selected submissions after the contest. Results form the **Test Leaderboard** and determine official rankings, medals, and awards. |
 
-Contestants cannot inspect, train on, or generate predictions locally for the hidden test dataset. After the contest, the grading system runs the selected submissions on test inputs and scores their outputs against hidden labels.
+After the contest, the grading system runs the selected submissions on test inputs and scores their outputs against hidden labels.
 
-During the contest, contestants see their own Leaderboard A scores per task, the baseline score (`Min_Score`), and the anonymous highest higher-is-better submission score across all contestants (`Max_Submission`), including their own submissions. They cannot see other contestants' individual scores or rankings.
+During the contest, contestants see their own Validation Leaderboard scores per task, the baseline score (`Min_Score`), and the anonymous highest higher-is-better submission score across all contestants (`Max_Submission`). They cannot see other contestants' individual scores or rankings.
 
 #### Selecting submissions for final scoring
 
-Each individual contestant, or each team in the Team Contest, may bookmark or select **up to two distinct submissions per task** before their contest deadline.
+Each participant may bookmark or select **up to two distinct submissions per task** before their contest deadline.
 
 | Explicitly selected submissions | Submissions evaluated on the hidden test dataset |
 | --- | --- |
 | Two | Both selected submissions. |
-| One | The selected submission and the highest-scoring remaining submission on Leaderboard A. |
-| None | The two highest-scoring submissions on Leaderboard A. |
+| One | The selected submission and the highest-scoring remaining submission on the Validation Leaderboard. |
+| None | The two highest-scoring submissions on the Validation Leaderboard. |
 
-Automatic selection considers submissions with valid Leaderboard A scores. Ties are broken in favor of the submission received later by the contest system. A selected submission is not chosen again for the second slot. If fewer than two submissions are available, only the available submissions are evaluated.
+Automatic selection considers submissions with valid Validation Leaderboard scores. Ties are broken in favor of the submission received later by the contest system. A selected submission is not chosen again for the second slot. If fewer than two submissions are available, only the available submissions are evaluated.
 
 Submissions received before the deadline continue to run even if they are queued or still executing when the contest ends. Automatic selection takes place after their validation evaluations finish. Explicit selections cannot be changed after the contestant's deadline.
 
@@ -140,7 +157,7 @@ Submissions received before the deadline continue to run even if they are queued
 
 1. All contestants leave the hall.
 2. TLs may enter to inspect their team's laptops and submissions.
-3. TLs are shown the best selected submission score on Leaderboard B for each task, for each of their contestants in the Individual Contest or for their team in the Team Contest, both before and after normalization, without rankings.
+3. TLs are shown the best selected submission score on the Test Leaderboard for each task, for each of their contestants in the Individual Contest or for their team in the Team Contest, both before and after normalization, without rankings.
 4. TLs share these scores with their contestants to prepare appeals, while keeping them confidential from other teams until the closing ceremony.
 5. Official rankings are withheld until the closing ceremony. Afterward, both leaderboards are published for everyone.
 
@@ -148,7 +165,7 @@ Submissions received before the deadline continue to run even if they are queued
 
 **Provided:** Blank paper, writing tools, Clarification Request Forms, snacks, and water.
 
-**Allowed:** Writing utensils, small mascots, non-electronic earplugs, ID badges, snacks, and water. Contestants may request permission from the Scientific Committee during practice to use their own keyboard or mouse; approval is not guaranteed. External monitors are prohibited.
+**Allowed:** Writing utensils, small mascots, non-electronic earplugs, ID badges, snacks, and water. Contestants may request permission from the Scientific Committee during practice to use their own keyboard or mouse. External monitors are prohibited.
 
 **Prohibited:** Personal electronic devices, including computers, phones, earphones, calculators, communication or Bluetooth-enabled items; books; manuals; data storage media; and other items that can store or transmit data.
 
@@ -168,7 +185,7 @@ Questions about task details, rules, or grading may be submitted to the Scientif
 - A statement that the Python environment cannot be changed during the contest.
 - A request to rephrase the question in yes/no format.
 
-The Scientific Committee may decline ambiguous or unclear questions, or questions about knowledge contestants are expected to have. Non-trivial, substantial answers are broadcast to all contestants.
+The Scientific Committee may decline ambiguous or unclear questions, or questions about knowledge contestants are expected to have. Substantial answers are broadcast to all contestants.
 
 ### 2.8. Technical Assistance Requests
 
@@ -197,14 +214,13 @@ All appeals must be submitted by Team Leaders. A TL may appeal for an individual
 
 Appeals may be submitted immediately after each contest ends. The closing deadline will be announced in the event schedule. Submission instructions and required information will be announced separately.
 
-The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL using the contact details supplied with the appeal; the TL must reply as quickly as possible. The committee may arrange a face-to-face meeting with the TL and possibly the affected contestant. Organizers announce the meeting details and timing. Final decisions are shared with the General Assembly at its first meeting after those decisions.
+The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL; the TL must reply as quickly as possible. The committee may arrange a face-to-face meeting with the TL and possibly the affected contestant. Final decisions are shared with the General Assembly at its first meeting after those decisions.
 
 ## 3. Team Contest
 
 - Team members sit together and may communicate and cooperate.
 - Each team receives **exactly one organizer-provided computer or laptop, shared by all three contestants**. The team receives the same software environment, GPU allocation, and evaluation limits as one individual contestant, as specified in the [Technical Appendix](technical-appendix.md).
 - Teams must not communicate with other teams or with people outside the contest hall.
-- Scoring and procedures are the same as in the Individual Contest, with each team acting as one participant.
 
 ## 4. Medals, Awards, Trophies and Certificates
 

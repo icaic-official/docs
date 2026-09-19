@@ -3,7 +3,7 @@
 > [!CAUTION]
 > **This appendix is not finalized.** Specifications and limits are provisional. The appendix will be finalized no later than one month before the contest.
 
-**Updated: 18 September 2026.**
+**Updated: 19 September 2026.**
 
 This appendix applies to **both the Individual Contest and the Team Contest**. Each team receives the same resources and limits as one individual contestant.
 
@@ -11,20 +11,17 @@ This appendix applies to **both the Individual Contest and the Team Contest**. E
 
 | Component | Specification |
 | --- | --- |
-| Contest platform | The contest platform provides access to task statements and datasets, solution submission, final submission selection, and evaluation scores. |
+| Contest platform | Provides task statements, datasets, solution submission, final submission selection, and evaluation scores. |
 | Operating system | Ubuntu 26.04 LTS |
-| Main development environment | JupyterLab 4.6, accessed through the internal contest network, with GPU access for model training. |
-| Offline editor | VSCode 1.138 on contestant laptops, without direct GPU access or AI assistance. |
-| Python | Python 3.14 |
-| Package versions | The provisional pins in section 2; the finalized contest image is identical for all contestants. |
-
-Software versions are provisional pending installation and GPU compatibility validation. The finalized contest image will be published before the contest.
+| Main development environment | JupyterLab 4.6, accessed through the internal contest network, with GPU access on the training and evaluation machines. |
+| Offline editor | VSCode 1.138 on contestant laptops, without direct GPU access. |
+| Python | Python 3.13 |
 
 ## 2. Available Python Libraries
 
-The contest environment uses the following provisional package versions.
+The listed version families may change following installation and GPU compatibility testing. Final package versions will be published with the finalized contest image before the contest. The finalized image is identical for all contestants.
 
-| Category | Package | Version |
+| Category | Package | Version family |
 | --- | --- | --- |
 | Core AI/ML | `torch` | 2.14 |
 | Core AI/ML | `torchvision` | 0.29 |
@@ -49,7 +46,7 @@ The contest environment uses the following provisional package versions.
 | Data processing | `polars` | 1.44 |
 | Data processing | `pyarrow` | 25.0 |
 | Data processing | `h5py` | 3.16 |
-| Computer vision | `opencv-python` | 5.0 |
+| Computer vision | `opencv-python-headless` | 5.0 |
 | Computer vision | `Pillow` | 12.3 |
 | Computer vision | `scikit-image` | 0.26 |
 | Computer vision | `albumentations` | 2.0 |
@@ -66,19 +63,13 @@ The contest environment uses the following provisional package versions.
 
 The Python standard library may also be used. Installing additional packages during the contest is prohibited. **TensorFlow and Keras are unavailable.**
 
-## 3. AI Assistance
+## 3. Hardware Resources and Pretrained Models
 
-No LLM assistant is provided. LLM-based chat assistants, copilots, browser assistants, and AI coding agents are prohibited, including locally running assistants. External APIs are inaccessible and prohibited.
+### 3.1. Laptops
 
-Task models and pretrained checkpoints may be used only as specified in section 4 and the task statement; their availability does not authorize their use as coding or chat assistants.
+Each individual contestant or team receives **one Ubuntu laptop without a GPU**, shared by all three contestants in the Team Contest.
 
-## 4. Hardware Resources and Pretrained Models
-
-### 4.1. Laptops
-
-In the Individual Contest, each contestant receives one Ubuntu laptop without a GPU. In the Team Contest, each team receives **one Ubuntu laptop without a GPU, shared by all three contestants**. GPU training and execution take place through JupyterLab on the training and evaluation machines.
-
-### 4.2. Training and Evaluation Machines
+### 3.2. Training and Evaluation Machines
 
 Training and evaluation use **Amazon EC2 `g6.xlarge`** instances:
 
@@ -90,24 +81,23 @@ Training and evaluation use **Amazon EC2 `g6.xlarge`** instances:
 | System memory | 16 GiB |
 | Local instance storage | 250 GB NVMe SSD |
 
-### 4.3. Pretrained Models
+### 3.3. Pretrained Models
 
-The approved pretrained-model list will be published before the contest. Approved checkpoints and their required supporting files will be pre-cached in the contest environment. Contestants may use only models explicitly provided by the organizers. External model downloads are prohibited. Documentation for approved models will be available offline.
+The approved pretrained-model list will be published before the contest. Approved checkpoints and their required supporting files will be pre-cached in the contest environment. Contestants may use only models explicitly provided by the organizers. Documentation for approved models will be available offline.
 
-## 5. Network Access and Offline Resources
+Task models and pretrained checkpoints may be used only as specified here and in the task statement. They may not be used as coding or chat assistants.
 
-**There is no internet access during the contest.** Contestant laptops, training environments, and the grading system can access only internal contest services.
+## 4. Offline Resources
 
-Required datasets, approved model files, and documentation are provided within the contest environment. Messaging, collaboration, and file-sharing services are prohibited. Attempts to bypass platform restrictions are prohibited.
+Required datasets and documentation are provided within the contest environment.
 
-## 6. Evaluation Limits
+## 5. Evaluation Limits
 
 | Limit | Rule |
 | --- | --- |
 | Notebook runtime | Maximum **10 minutes per submission**, unless the task statement explicitly states otherwise |
-| Submissions | Maximum **15 submissions per task per individual contestant or team**, according to the contest |
+| Submissions | Maximum **15 submissions per task per individual contestant or team** |
 | Submission accounting | All submissions count, including failed submissions, except those affected by a platform-side problem |
 | Concurrent submissions | Permitted; submissions enter a queue and results appear when ready |
-| End of contest | Submissions received before the contestant's deadline continue to run, including queued submissions, after the contest ends |
 
 The runtime limit applies to each evaluation run of a submission, including any training, model loading, preprocessing, and inference performed within that run.
