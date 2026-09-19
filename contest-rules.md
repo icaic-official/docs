@@ -123,7 +123,7 @@ It updates live until one hour before the scheduled end of each contest, then st
 
 #### Selecting submissions for final scoring
 
-Each participant may bookmark or select **up to two distinct submissions per task** before their contest deadline.
+Each participant may select **up to two distinct submissions per task** before their contest deadline, including submissions still queued or running.
 
 | Explicitly selected submissions | Submissions evaluated on the hidden test dataset |
 | --- | --- |
@@ -133,7 +133,9 @@ Each participant may bookmark or select **up to two distinct submissions per tas
 
 Automatic selection uses valid higher-is-better validation scores before normalization. Ties are broken in favor of the submission received later by the contest system. A selected submission is not chosen again for the second slot. If fewer than two submissions are available, only the available submissions are evaluated.
 
-Submissions received before the deadline continue to run even if they are queued or still executing when the contest ends. Automatic selection takes place after their validation evaluations finish. Explicit selections cannot be changed after the contestant's deadline.
+Submissions received before the deadline continue to be evaluated after the contest. Once all validation results are available, the system fills any unselected slots according to the table above.
+
+If a selected submission fails validation after the deadline, the TL must appeal under Section 2.11 to request a rerun or replacement. If the SC approves a replacement, it uses the remaining unselected submission with the highest validation score, following the automatic selection rule above.
 
 ### 2.8. Scoring and Ranking
 
