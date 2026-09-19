@@ -81,23 +81,25 @@ Apply the same conversion to baseline and Scientific Committee metrics. The Vali
 Scores scale linearly from **0 points** at the baseline to **100 points** at the target defined below.
 
 ```text
-Reference_Score = Min_Score + 0.9 × (SC_Solution - Min_Score)
+Reference_Score = Min_Score + 0.9 × (SC_Score - Min_Score)
 Max_Score = max(Reference_Score, Max_Submission)
 Norm_Score = 100 × (Submission_Score - Min_Score) / (Max_Score - Min_Score)
 ```
+
+The 0.9 factor allows a margin below the committee’s improvement over the baseline, making full marks more attainable. A higher contestant score raises the target.
 
 Clamp `Norm_Score` to 0–100.
 
 | Term | Definition |
 | --- | --- |
 | `Min_Score` | The baseline solution's higher-is-better score. |
-| `SC_Solution` | The Scientific Committee solution's higher-is-better score. |
+| `SC_Score` | The Scientific Committee solution's higher-is-better score. |
 | `Max_Submission` | The highest valid higher-is-better score across all contestants' submissions evaluated on the relevant dataset. For final scoring, this includes only submissions selected for test evaluation. |
 | `Reference_Score` | The committee-derived reference target. |
 | `Max_Score` | The target for 100 points. If there are no valid evaluated submissions, use `Reference_Score`. |
 | `Norm_Score` | The normalized task score. |
 
-The Scientific Committee guarantees finite baseline and reference scores with **`SC_Solution > Min_Score` on both validation and test data**.
+The Scientific Committee guarantees finite baseline and reference scores with **`SC_Score > Min_Score` on both validation and test data**.
 
 Validation scores and their reference values are computed on validation data. Final test scores, including the baseline, Scientific Committee score, and highest selected submission score used for normalization, are computed on test data.
 
@@ -106,7 +108,7 @@ Validation scores and their reference values are computed on validation data. Fi
 ```text
 Submission_Score = 0.85
 Min_Score = 0.60
-SC_Solution = 0.95
+SC_Score = 0.95
 Max_Submission = 0.90
 Reference_Score = 0.60 + 0.9 × (0.95 - 0.60) = 0.915
 Max_Score = max(0.915, 0.90) = 0.915
@@ -120,7 +122,7 @@ Displayed score = 79.3651
 ```text
 Submission_Score = -3
 Min_Score = -5
-SC_Solution = -2
+SC_Score = -2
 Max_Submission = -2.5
 Reference_Score = -5 + 0.9 × (-2 - (-5)) = -2.3
 Max_Score = max(-2.3, -2.5) = -2.3
