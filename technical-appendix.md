@@ -100,4 +100,4 @@ Required datasets and documentation are provided within the contest environment.
 | Submission accounting | All submissions count, including failed submissions, except those affected by a platform-side problem |
 | Concurrent submissions | Permitted; submissions enter a queue and results appear when ready |
 
-The runtime limit applies to each evaluation run of a submission, including any training, model loading, preprocessing, and inference performed within that run.
+Runtime limits are measured in wall-clock time. The per-submission limit applies to each evaluation run, including any training, model loading, preprocessing, and inference performed within that run.
