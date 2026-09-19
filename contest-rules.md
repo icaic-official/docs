@@ -223,7 +223,7 @@ For each task where a selected submission beats the test baseline, count the tim
 
 Warnings are given 15, 5, and 1 minute before the end. When the contest ends, contestants must stop immediately and wait for instructions to leave their desks.
 
-Substantial technical problems may justify extra time, decided case by case. Contestants must report an issue immediately through a clarification request or, if their laptop or network is unavailable, by raising the colored card and notifying assistance staff.
+Substantial technical problems may justify extra time, decided case by case. Contestants must report technical issues immediately as described in Section 2.6.
 
 The Scientific Committee may grant an extension before or after the scheduled end, including for incidents reported immediately before the deadline. Contestants must stop at their current deadline and wait for instructions. If an extension is granted, organizers specify when work resumes and the revised deadline. The revised deadline applies to submissions and final-submission selections.
 
