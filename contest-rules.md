@@ -53,13 +53,13 @@ In these rules, “data” includes datasets, problem instances, and task enviro
 
 #### Individual Contest
 
-Contestants use organizer-provided laptops and are scored individually. During the contest, they may communicate only with authorized contest personnel through the procedures in Sections 2.7 and 2.8.
+Contestants use organizer-provided laptops and are scored individually. During the contest, they may communicate only with authorized contest personnel through the procedures in Sections 2.5 and 2.6.
 
 #### Team Contest
 
 - Team members sit together and may communicate and cooperate.
 - Each team receives **exactly one** organizer-provided laptop, shared by all three contestants. The team receives the same software environment, GPU allocation, and evaluation limits as one individual contestant, as specified in the [Technical Appendix](technical-appendix.md).
-- During the contest, contestants may communicate only with their teammates and authorized contest personnel through the procedures in Sections 2.7 and 2.8.
+- During the contest, contestants may communicate only with their teammates and authorized contest personnel through the procedures in Sections 2.5 and 2.6.
 
 ### 2.2. Contest Environment
 
@@ -73,7 +73,69 @@ Contestants use organizer-provided laptops and are scored individually. During t
 - Screen activity may be monitored live and recorded.
 - Requests concerning the contest environment may be sent to [sc@icaic.sg](mailto:sc@icaic.sg) no later than four weeks before ICAIC starts.
 
-### 2.3. Scoring
+### 2.3. Supplies
+
+**Provided:** Blank paper, writing tools, Clarification Request Forms, snacks, and water.
+
+**Allowed:** Writing utensils, small mascots, non-electronic earplugs, ID badges, snacks, and water. Contestants may request permission from the Scientific Committee during practice to use their own keyboard or mouse. External monitors are prohibited.
+
+**Prohibited:** Personal electronic devices, including computers, phones, earphones, calculators, communication or Bluetooth-enabled items; books; manuals; data storage media; and other items that can store or transmit data.
+
+**Medical and special needs:** Medical items, such as tablets and glucometers, require Scientific Committee approval before entry. Requests may be made during practice. If a medical device needs a Bluetooth connection to a phone, the phone must be held by a volunteer in the hall who has been briefed on how to respond to abnormal situations. Other situations should be reported to the Scientific Committee before practice.
+
+### 2.4. Starting the Contest
+
+Contestants must be seated at least 10 minutes before the start. They must not touch laptops or tools until instructed by the organizers.
+
+### 2.5. Clarification Requests
+
+Task statements are in English. During the contest, contestants must use English when communicating with contest officials, and officials will respond in English.
+
+Questions about task details, rules, or grading may be submitted to the Scientific Committee through the contest system or written forms. Responses may be:
+
+- Yes or no.
+- A reference to a section of the task statement, contest rules, or appendix.
+- A request to consult the data and baseline first when the task description is unclear.
+- A statement that the Python environment cannot be changed during the contest.
+- A request to rephrase the question in yes/no format.
+
+The Scientific Committee may decline ambiguous or unclear questions, or questions about knowledge contestants are expected to have. Substantial answers are broadcast to all contestants.
+
+### 2.6. Technical Assistance Requests
+
+For laptop, network, or other technical problems, raise the colored card as instructed by the organizers. Assistance staff address technical issues but do not answer task questions.
+
+### 2.7. Evaluation, Feedback and Final Submission Selection
+
+Tasks use the following data for development and evaluation. Task statements may specify different development or validation arrangements.
+
+| Stage | Access during the contest | Purpose |
+| --- | --- | --- |
+| Development | Provided data, including labels where applicable. | Build and improve solutions. |
+| Validation | Data access as specified in the task statement; reference answers remain hidden. | Evaluate submissions and provide feedback for solution improvement and selection. Results form the **Validation Leaderboard**. |
+| Test | Test data and reference answers remain hidden from contestants. | Evaluate selected submissions after the contest. Results form the **Test Leaderboard** and determine official rankings, medals, and awards. |
+
+After the contest, the grading system evaluates the selected submissions on hidden test data using the task's evaluation procedure.
+
+The Validation Leaderboard is public, showing contestant or team identities, their best normalized validation score per task, and overall rankings by the sum of those scores.
+
+It updates live until one hour before the scheduled end of each contest, then stays frozen until after the closing ceremony. During the freeze, private submission feedback shows evaluation status and raw validation metrics only. Updated normalized scores and normalization targets are withheld until the leaderboard is unfrozen.
+
+#### Selecting submissions for final scoring
+
+Each participant may bookmark or select **up to two distinct submissions per task** before their contest deadline.
+
+| Explicitly selected submissions | Submissions evaluated on the hidden test dataset |
+| --- | --- |
+| Two | Both selected submissions. |
+| One | The selected submission and the remaining submission with the highest validation score. |
+| None | The two submissions with the highest validation scores. |
+
+Automatic selection uses valid higher-is-better validation scores before normalization. Ties are broken in favor of the submission received later by the contest system. A selected submission is not chosen again for the second slot. If fewer than two submissions are available, only the available submissions are evaluated.
+
+Submissions received before the deadline continue to run even if they are queued or still executing when the contest ends. Automatic selection takes place after their validation evaluations finish. Explicit selections cannot be changed after the contestant's deadline.
+
+### 2.8. Scoring and Ranking
 
 Each task receives a final score from **0 to 100**. If a task has subtasks, their contributions are combined into one task metric as specified in the task statement. Normalization is applied once to the task score, not separately to subtasks.
 
@@ -106,7 +168,7 @@ Clamp `Norm_Score` to 0–100.
 | --- | --- |
 | `Min_Score` | The baseline solution's higher-is-better score. |
 | `SC_Score` | The Scientific Committee solution's higher-is-better score. |
-| `Max_Submission` | For validation, the highest valid higher-is-better validation score across all participants' evaluated submissions. For test normalization, the highest valid higher-is-better test score across only the submissions selected for test evaluation under Section 2.4, including automatic selections. |
+| `Max_Submission` | For validation, the highest valid higher-is-better validation score across all participants' evaluated submissions. For test normalization, the highest valid higher-is-better test score across only the submissions selected for test evaluation under Section 2.7, including automatic selections. |
 | `Reference_Score` | The committee-derived reference target. |
 | `Max_Score` | The target for 100 points. If there are no valid evaluated submissions, use `Reference_Score`. |
 | `Norm_Score` | The normalized task score. |
@@ -114,8 +176,6 @@ Clamp `Norm_Score` to 0–100.
 The Scientific Committee guarantees finite baseline and reference scores with **`SC_Score > Min_Score` on both validation and test data**.
 
 Validation scores and their reference values are computed on validation data. Final test scores, including the baseline, Scientific Committee score, and highest selected submission score used for normalization, are computed on test data.
-
-If a contestant or team is disqualified from a contest, their submissions are excluded from that contest's normalization. The grading system recalculates the affected validation and test normalization targets, all affected scores and totals, rankings, and medal allocations using the remaining eligible participants. Published results are corrected accordingly.
 
 **Higher is better (accuracy).** With submission accuracy 85%, baseline accuracy 60%, Scientific Committee accuracy 95%, and best contestant accuracy 90% on the same dataset:
 
@@ -149,6 +209,8 @@ All raw metrics, conversions, normalization, and summation use IEEE 754 double p
 
 A submission that times out, exceeds memory limits, crashes, produces malformed output, or yields a non-finite metric receives **0 points**, without applying metric conversion or normalization. A task with no submission receives **0 points**. Platform-side failures are corrected and the affected evaluations rerun; they do not count against the submission limit.
 
+If a contestant or team is disqualified from a contest, their submissions are excluded from that contest's normalization. The grading system recalculates the affected validation and test normalization targets, all affected scores and totals, rankings, and medal allocations using the remaining eligible participants. Published results are corrected accordingly.
+
 A contestant's final task score is the **higher normalized test score of their two selected submissions**. If only one submission is available, its test score counts; if neither produces a valid result, the task score is 0.
 
 #### Final ranking and ties
@@ -156,76 +218,6 @@ A contestant's final task score is the **higher normalized test score of their t
 Participants are ranked by higher full-precision total test score, then lower total submission time. Remaining ties share a rank.
 
 For each task where a selected submission beats the test baseline, count the time from contest start until the selected submission earning the final task score is received by the contest system. If both earn that score, use the submission received earlier. Sum these times across tasks. Other tasks contribute no time, and failed submissions incur no time penalty.
-
-### 2.4. Feedback and Final Submission Selection
-
-Tasks use the following data for development and evaluation. Task statements may specify different development or validation arrangements.
-
-| Stage | Access during the contest | Purpose |
-| --- | --- | --- |
-| Development | Provided data, including labels where applicable. | Build and improve solutions. |
-| Validation | Data access as specified in the task statement; reference answers remain hidden. | Evaluate submissions and provide feedback for solution improvement and selection. Results form the **Validation Leaderboard**. |
-| Test | Test data and reference answers remain hidden from contestants. | Evaluate selected submissions after the contest. Results form the **Test Leaderboard** and determine official rankings, medals, and awards. |
-
-After the contest, the grading system evaluates the selected submissions on hidden test data using the task's evaluation procedure.
-
-The Validation Leaderboard is public, showing contestant or team identities, their best normalized validation score per task, and overall rankings by the sum of those scores.
-
-It updates live until one hour before the scheduled end of each contest, then stays frozen until after the closing ceremony. During the freeze, private submission feedback shows evaluation status and raw validation metrics only. Updated normalized scores and normalization targets are withheld until the leaderboard is unfrozen.
-
-#### Selecting submissions for final scoring
-
-Each participant may bookmark or select **up to two distinct submissions per task** before their contest deadline.
-
-| Explicitly selected submissions | Submissions evaluated on the hidden test dataset |
-| --- | --- |
-| Two | Both selected submissions. |
-| One | The selected submission and the remaining submission with the highest validation score. |
-| None | The two submissions with the highest validation scores. |
-
-Automatic selection uses valid higher-is-better validation scores before normalization. Ties are broken in favor of the submission received later by the contest system. A selected submission is not chosen again for the second slot. If fewer than two submissions are available, only the available submissions are evaluated.
-
-Submissions received before the deadline continue to run even if they are queued or still executing when the contest ends. Automatic selection takes place after their validation evaluations finish. Explicit selections cannot be changed after the contestant's deadline.
-
-#### Results after the contest
-
-1. All contestants leave the hall.
-2. TLs may enter to inspect their team's laptops and submissions.
-3. TLs are shown the best selected submission score on the Test Leaderboard for each task, for each of their contestants in the Individual Contest or for their team in the Team Contest, both before and after normalization, without rankings.
-4. TLs share these scores with their contestants to prepare appeals, while keeping them confidential from other teams until the closing ceremony.
-5. Official test rankings are withheld until the closing ceremony. Afterward, the Validation Leaderboard is unfrozen and both final leaderboards are published for everyone.
-
-### 2.5. Supplies
-
-**Provided:** Blank paper, writing tools, Clarification Request Forms, snacks, and water.
-
-**Allowed:** Writing utensils, small mascots, non-electronic earplugs, ID badges, snacks, and water. Contestants may request permission from the Scientific Committee during practice to use their own keyboard or mouse. External monitors are prohibited.
-
-**Prohibited:** Personal electronic devices, including computers, phones, earphones, calculators, communication or Bluetooth-enabled items; books; manuals; data storage media; and other items that can store or transmit data.
-
-**Medical and special needs:** Medical items, such as tablets and glucometers, require Scientific Committee approval before entry. Requests may be made during practice. If a medical device needs a Bluetooth connection to a phone, the phone must be held by a volunteer in the hall who has been briefed on how to respond to abnormal situations. Other situations should be reported to the Scientific Committee before practice.
-
-### 2.6. Starting the Contest
-
-Contestants must be seated at least 10 minutes before the start. They must not touch laptops or tools until instructed by the organizers.
-
-### 2.7. Clarification Requests
-
-Task statements are in English. During the contest, contestants must use English when communicating with contest officials, and officials will respond in English.
-
-Questions about task details, rules, or grading may be submitted to the Scientific Committee through the contest system or written forms. Responses may be:
-
-- Yes or no.
-- A reference to a section of the task statement, contest rules, or appendix.
-- A request to consult the data and baseline first when the task description is unclear.
-- A statement that the Python environment cannot be changed during the contest.
-- A request to rephrase the question in yes/no format.
-
-The Scientific Committee may decline ambiguous or unclear questions, or questions about knowledge contestants are expected to have. Substantial answers are broadcast to all contestants.
-
-### 2.8. Technical Assistance Requests
-
-For laptop, network, or other technical problems, raise the colored card as instructed by the organizers. Assistance staff address technical issues but do not answer task questions.
 
 ### 2.9. Ending the Contest
 
@@ -241,10 +233,20 @@ Cheating is prohibited, including:
 
 - Tampering with the contest system or attempting to breach the scoring system.
 - Communicating with unauthorized people during the contest.
-- Bringing prohibited items (see Section 2.5) into the contest hall.
+- Bringing prohibited items (see Section 2.3) into the contest hall.
 - Attempting unauthorized access to test data.
 
-### 2.11. Appeal Process
+### 2.11. Results and Appeals
+
+#### Results after the contest
+
+1. All contestants leave the hall.
+2. TLs may enter to inspect their team's laptops and submissions.
+3. TLs are shown the best selected submission score on the Test Leaderboard for each task, for each of their contestants in the Individual Contest or for their team in the Team Contest, both before and after normalization, without rankings.
+4. TLs share these scores with their contestants to prepare appeals, while keeping them confidential from other teams until the closing ceremony.
+5. Official test rankings are withheld until the closing ceremony. Afterward, the Validation Leaderboard is unfrozen and both final leaderboards are published for everyone.
+
+#### Appeal process
 
 All appeals must be submitted by Team Leaders. A TL may appeal for an individual contestant or for the entire team in the Team Contest.
 
