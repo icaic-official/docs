@@ -1,6 +1,6 @@
 # Contest Rules for ICAIC 2026
 
-**Updated: 19 September 2026.**
+**Updated: 20 September 2026.**
 
 These rules cover the Individual Contest and Team Contest of the International Collegiate Artificial Intelligence Contest (ICAIC). They may be updated before the event to address omissions, inconsistencies, or new information, without substantial changes to the format.
 
@@ -256,26 +256,30 @@ Appeals may be submitted immediately after each contest ends. The closing deadli
 
 The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL, who must reply promptly. The committee may meet the TL, and possibly the affected contestant, in person. The SC's decisions on appeals are final. They are shared with the General Assembly at its first meeting after those decisions for information, not further approval or review.
 
-## 3. Medals, Awards and Certificates
+## 3. Medals, Trophy and Certificates
 
 ### 3.1. Medals
 
-The Individual Contest and Team Contest each have a planned allocation of **4 gold, 4 silver, and 4 bronze medals**, awarded to contestants and teams respectively based on the final ranking in that contest.
+The Individual Contest and Team Contest each have a planned allocation of **4 gold, 4 silver, and 4 bronze medals**, awarded to contestants and teams, respectively, based on the final ranking in the corresponding contest.
 
 In either contest, contestants or teams still tied at a medal boundary after the submission-time tiebreaker receive the same higher medal. Medal counts may therefore exceed the planned allocation. Each contestant may receive at most one Individual Contest medal, and each team at most one Team Contest medal.
 
-### 3.2. Certificates
+### 3.2. Team Champion Trophy
 
-#### 3.2.1. Participation Certificate
+The Team Champion Trophy will be awarded to the highest-ranked team in the Team Contest. The trophy will be retained by the contest organisation and carried forward as a challenge trophy for the subsequent edition of ICAIC. The name of the winning team will be engraved on the trophy.
+
+### 3.3. Certificates
+
+#### 3.3.1. Participation Certificate
 
 Participation certificates are awarded to everyone officially involved, including contestants, team leaders, guests, volunteers, Scientific Committee and board members, host scientific, technical, and organizing committee members, and sponsors.
 
 Each certificate includes the participant's name, role, and country. It is signed by ICAIC's Executive Director, with additional signatures at ICAIC's discretion.
 
-#### 3.2.2. Achievement Certificate
+#### 3.3.2. Achievement Certificate
 
 Achievement certificates are awarded to contestants or teams winning official medals or awards. Each includes the contestant's or team's name, country, and achievement, such as a medal, award, or honorable mention. Certificates are signed by ICAIC's Executive Director and the Chair of the Scientific Committee.
 
-### 3.3. Publication of Results
+### 3.4. Publication of Results
 
 Results, scoreboards, medals, and awards are published on the official ICAIC website. Questions or suggestions about contest rules should be sent to [sc@icaic.sg](mailto:sc@icaic.sg).
