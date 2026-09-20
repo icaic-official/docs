@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Contest Rules
-nav_order: 2
+nav_order: 3
 ---
 
 # Contest Rules
