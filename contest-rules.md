@@ -31,7 +31,14 @@ Each university designates a **Team Leader (TL)** as its non-competing represent
 
 Each university may enter **one team of three contestants**. All three contestants must be undergraduate students enrolled in that university.
 
-Enrollment eligibility is assessed on the date of the first ICAIC contest.
+For ICAIC 2026, each contestant must also meet at least one of the following conditions:
+
+- First began post-secondary studies in **2022 or later**.
+- Was born in **2003 or later**.
+
+Eligibility is assessed on the date of the first ICAIC contest.
+
+For interrupted or extended studies, the TL may request an eligibility extension from the SC at least three weeks before the first ICAIC contest. The request must explain the circumstances and show that the extension would not give an unfair advantage. Approval is normally granted if the contestant meets all other eligibility requirements and has completed no more than the equivalent of eight semesters of full-time STEM study by the eligibility assessment date.
 
 At on-site registration, contestants must present photo identification and proof of enrollment covering that date. A letter in English signed by a university official is sufficient proof of enrollment.
 
@@ -74,20 +81,24 @@ Contestants use organizer-provided laptops and are scored individually. During t
 - Each task may require submission of code, model artifacts, task outputs, or a combination of these, as specified in the task statement.
 - Contestant laptops, development environments, and the grading system have no internet access during the contest. Only internal contest services are accessible. External downloads and APIs are prohibited.
 - Messaging, collaboration, and file-sharing services are prohibited. Attempts to bypass platform restrictions are prohibited.
-- No LLM assistant is provided. LLM-based chat assistants, copilots, browser assistants, and AI coding agents are prohibited, including locally running assistants.
+- LLM-based assistance is prohibited, including chat assistants, copilots, browser assistants, and AI coding agents, whether running locally or remotely. If the organizers provide an LLM as part of a task, contestants may use that model for assistance with any task in the same contest.
 - Available packages, hardware, approved pretrained models, editors, and offline resources are specified in the [Technical Appendix](technical-appendix.md).
-- Screen activity may be monitored live and recorded.
+- Computer activity may be monitored and recorded.
 - Requests concerning the contest environment may be sent to [sc@icaic.sg](mailto:sc@icaic.sg) no later than four weeks before ICAIC starts.
 
 ### 2.3. Supplies
 
 **Provided:** Blank paper, writing tools, Clarification Request Forms, snacks, and water.
 
-**Allowed:** Writing utensils, small mascots, non-electronic earplugs, ID badges, snacks, and water. Contestants may request permission from the Scientific Committee during practice to use their own keyboard or mouse. External monitors are prohibited.
+**Allowed:** Writing utensils, small non-electronic mascots, non-electronic earplugs, ID badges, snacks, and water.
 
-**Prohibited:** Personal electronic devices, including computers, phones, earphones, calculators, communication or Bluetooth-enabled items; books; manuals; data storage media; and other items that can store or transmit data.
+**Prohibited:** Personal electronic devices, including computers, phones, smartwatches, smart glasses, earphones, calculators, external monitors, wireless communication devices, and electronic storage devices; books, manuals, notes, and other written reference materials. Keyboards, mice, medical devices, and supporting phones approved under the procedures below are exceptions.
 
-**Medical and special needs:** Medical items, such as tablets and glucometers, require Scientific Committee approval before entry. Requests may be made during practice. If a medical device needs a Bluetooth connection to a phone, the phone must be held by a volunteer in the hall who has been briefed on how to respond to abnormal situations. Other situations should be reported to the Scientific Committee before practice.
+Requests for personal keyboards, mice, or medical and special arrangements must be submitted through registration by the announced deadline before practice.
+
+**Personal keyboards and mice:** Requests must include the device's make and model. Devices must be wired, have no wireless capability even when used wired, have no built-in macro or programmable-key functionality, and have no modifications affecting electronic functionality. The SC confirms before practice whether a device may be brought for inspection. Final approval follows inspection and testing during practice. The SC may reject a device even if it meets these requirements.
+
+**Medical and special needs:** Personal medication is allowed. Electronic medical devices, supporting phones, and other special arrangements require SC approval before entry. Arrangements are agreed with the contestant before practice and checked during practice. Needs arising later must be reported as soon as possible. If a medical device requires a phone connection, the SC agrees on how the phone will be held and used; this may include a briefed volunteer holding the phone in the hall.
 
 ### 2.4. Starting the Contest
 
@@ -215,7 +226,9 @@ Displayed score = 74.0741
 
 All raw metrics, conversions, normalization, and summation use IEEE 754 double precision with no intermediate rounding. Reports, scoreboards, and certificates display four decimal places. Rankings, submission-selection comparisons, and medal boundaries use full-precision values.
 
-A submission that times out, exceeds memory limits, crashes, produces malformed output, or yields a non-finite metric receives **0 points**, without applying metric conversion or normalization. A task with no submission receives **0 points**. Platform-side failures are corrected and the affected evaluations rerun; they do not count against the submission limit.
+A submission that times out, exceeds memory limits, crashes, produces malformed output, or yields a non-finite metric receives **0 points**, without applying metric conversion or normalization. A task with no submission receives **0 points**.
+
+All submissions count against the submission limit, including failed submissions. Platform-side failures are corrected and the affected evaluations rerun without consuming additional attempts. Alternatively, the SC may ignore an affected submission, excluding it from scoring and final submission selection and restoring one attempt.
 
 If a contestant or team is disqualified from a contest, their submissions are excluded from that contest's normalization. The grading system recalculates the affected validation and test normalization targets, all affected scores and totals, rankings, and medal allocations using the remaining eligible participants. Published results are corrected accordingly.
 
@@ -249,10 +262,11 @@ Cheating is prohibited, including:
 #### Results after the contest
 
 1. All contestants leave the hall.
-2. TLs may enter to inspect their team's laptops and submissions.
-3. TLs are shown the best selected submission score on the Test Leaderboard for each task, for each of their contestants in the Individual Contest or for their team in the Team Contest, both before and after normalization, without rankings.
-4. TLs share these scores with their contestants to prepare appeals, while keeping them confidential from other teams until the closing ceremony.
-5. Official test rankings are withheld until the closing ceremony. Afterward, the Validation Leaderboard is unfrozen and both final leaderboards are published for everyone.
+2. Once all validation evaluations are complete and submissions selected under Section 2.7, the selected submissions are evaluated on hidden test data.
+3. TLs and their contestants may enter for supervised inspection of their own laptops and submissions to prepare appeals.
+4. Contestants are shown their best selected submission score on the Test Leaderboard for each task, both before and after normalization, without rankings. TLs receive these scores for all three contestants in the Individual Contest or for their team in the Team Contest.
+5. TLs and contestants must keep these scores confidential from other teams until the closing ceremony.
+6. Official test rankings are withheld until the closing ceremony. Afterward, the Validation Leaderboard is unfrozen and both final leaderboards are published for everyone.
 
 #### Appeal process
 

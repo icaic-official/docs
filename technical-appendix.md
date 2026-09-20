@@ -91,8 +91,6 @@ Training and evaluation use **Amazon EC2 `g6.xlarge`** instances:
 
 The approved pretrained-model list will be published before the contest. Approved checkpoints and their required supporting files will be pre-cached in the contest environment. Contestants may use only models explicitly provided by the organizers. Documentation for approved models will be available offline.
 
-Task models and pretrained checkpoints may be used only as specified here and in the task statement. They may not be used as coding or chat assistants.
-
 ## 4. Offline Resources
 
 Required datasets and documentation are provided within the contest environment.
@@ -103,7 +101,6 @@ Required datasets and documentation are provided within the contest environment.
 | --- | --- |
 | Notebook runtime | Maximum **10 minutes per submission**, unless the task statement explicitly states otherwise |
 | Submissions | Maximum **15 submissions per task per individual contestant or team** |
-| Submission accounting | All submissions count, including failed submissions, except those affected by a platform-side problem |
 | Concurrent submissions | Permitted; submissions enter a queue and results appear when ready |
 
 Runtime limits are measured in wall-clock time. The per-submission limit applies to each evaluation run, including any training, model loading, preprocessing, and inference performed within that run.
