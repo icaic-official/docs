@@ -1,0 +1,16 @@
+title: ICAIC 2026
+description: International Collegiate Artificial Intelligence Contest
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+
+callouts:
+  warning:
+    title: Warning
+    color: yellow
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: false

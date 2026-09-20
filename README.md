@@ -1,6 +1,11 @@
-# ICAIC 2026 Documentation
+---
+layout: default
+title: Home
+nav_order: 1
+permalink: /
+---
 
-The International Collegiate Artificial Intelligence Contest (ICAIC) includes an Individual Contest and a Team Contest.
+# International Collegiate Artificial Intelligence Contest
 
 | Document | Contents |
 | --- | --- |

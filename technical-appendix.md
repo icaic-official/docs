@@ -1,6 +1,12 @@
+---
+layout: default
+title: Technical Appendix
+nav_order: 4
+---
+
 # Technical Appendix
 
-> [!CAUTION]
+{: .warning }
 > **This appendix is not finalized.** Specifications and limits are provisional. The appendix will be finalized no later than one month before the contest.
 
 **Updated: 19 September 2026.**

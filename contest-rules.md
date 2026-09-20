@@ -1,4 +1,10 @@
-# Contest Rules for ICAIC 2026
+---
+layout: default
+title: Contest Rules
+nav_order: 2
+---
+
+# Contest Rules
 
 **Updated: 20 September 2026.**
 

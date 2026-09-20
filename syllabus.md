@@ -1,4 +1,10 @@
-# ICAIC Syllabus
+---
+layout: default
+title: Syllabus
+nav_order: 3
+---
+
+# Syllabus
 
 **Updated: 18 September 2026.**
 
