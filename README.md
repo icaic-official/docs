@@ -9,7 +9,7 @@ permalink: /
 
 | Document | Contents |
 | --- | --- |
-| [Syllabus](syllabus.md) | Topics, competencies, task-setting expectations, and preparation resources. |
+| [Syllabus](syllabus.md) | Topics and competencies, task design and assessment, and preparation resources. |
 | [Contest Rules](contest-rules.md) | Eligibility, conduct, format, scoring, submission selection, appeals, and awards. |
 | [Technical Appendix](technical-appendix.md) | Software, hardware, offline resources, and evaluation limits. **Provisional.** |
 

@@ -9,7 +9,7 @@ nav_order: 4
 {: .warning }
 > **This appendix is not finalized.** Specifications and limits are provisional. The appendix will be finalized no later than one month before the contest.
 
-**Updated: 19 September 2026.**
+**Updated: 21 September 2026.**
 
 This appendix applies to **both the Individual Contest and the Team Contest**. Each team receives the same resources and limits as one individual contestant.
 
@@ -20,10 +20,10 @@ This appendix applies to **both the Individual Contest and the Team Contest**. E
 | Contest platform | Provides task statements, datasets, solution submission, final submission selection, and evaluation scores. |
 | Operating system | Ubuntu 26.04 LTS |
 | Main development environment | JupyterLab 4.6, accessed through the internal contest network, with GPU access on the training and evaluation machines. |
-| Offline editor | VSCode 1.138 on contestant laptops, without direct GPU access. |
+| Offline editor | Visual Studio Code (VS Code) 1.138 on contestant laptops, without direct GPU access. |
 | Python | Python 3.13 |
 
-## 2. Available Python Libraries
+## 2. Available Python Packages
 
 The listed version families may change following installation and GPU compatibility testing. Final package versions will be published with the finalized contest image before the contest. The finalized image is identical for all contestants.
 
@@ -73,7 +73,7 @@ The Python standard library may also be used. Installing additional packages dur
 
 ### 3.1. Laptops
 
-Each individual contestant or team receives **one Ubuntu laptop without a GPU**, shared by all three contestants in the Team Contest.
+Each individual contestant or team receives **one Ubuntu laptop without a GPU**. In the Team Contest, all three contestants share the laptop.
 
 ### 3.2. Training and Evaluation Machines
 
@@ -95,11 +95,11 @@ The approved pretrained-model list will be published before the contest. Approve
 
 Required datasets and documentation are provided within the contest environment.
 
-## 5. Evaluation Limits
+## 5. Submission and Evaluation Limits
 
 | Limit | Rule |
 | --- | --- |
-| Notebook runtime | Maximum **10 minutes per submission**, unless the task statement explicitly states otherwise |
+| Evaluation runtime | Maximum **10 minutes per submission**, unless the task statement explicitly states otherwise |
 | Submissions | Maximum **15 submissions per task per individual contestant or team** |
 | Concurrent submissions | Permitted; submissions enter a queue and results appear when ready |
 

@@ -6,7 +6,7 @@ nav_order: 3
 
 # Contest Rules
 
-**Updated: 20 September 2026.**
+**Updated: 21 September 2026.**
 
 These rules cover the Individual Contest and Team Contest of the International Collegiate Artificial Intelligence Contest (ICAIC). They may be updated before the event to address omissions, inconsistencies, or new information, without substantial changes to the format.
 
@@ -52,7 +52,7 @@ Contestants must attend all events designated as required in the event schedule.
 
 Tasks follow the [ICAIC Syllabus](syllabus.md).
 
-The procedures below apply to both contests, with each team acting as one participant for submissions, scoring, feedback, final submission selection, and limits in the Team Contest.
+The procedures below apply to both contests. For submissions, scoring, feedback, final submission selection, and limits, a **participant** is an individual contestant in the Individual Contest or a team in the Team Contest.
 
 In these rules, “data” includes datasets, problem instances, and task environments.
 
@@ -76,7 +76,7 @@ Contestants use organizer-provided laptops and are scored individually. During t
 
 ### 2.2. Contest Environment
 
-- The programming language is Python, with development in a Jupyter Notebook environment. The Python environment cannot be changed during the contest.
+- The programming language is Python, with JupyterLab as the main development environment. The Python environment cannot be changed during the contest.
 - Every contestant or team receives the same compute resources for solution development and evaluation.
 - Each task may require submission of code, model artifacts, task outputs, or a combination of these, as specified in the task statement.
 - Contestant laptops, development environments, and the grading system have no internet access during the contest. Only internal contest services are accessible. External downloads and APIs are prohibited.
@@ -86,7 +86,7 @@ Contestants use organizer-provided laptops and are scored individually. During t
 - Computer activity may be monitored and recorded.
 - Requests concerning the contest environment may be sent to [sc@icaic.sg](mailto:sc@icaic.sg) no later than four weeks before ICAIC starts.
 
-### 2.3. Supplies
+### 2.3. Supplies and Personal Items
 
 **Provided:** Blank paper, writing tools, Clarification Request Forms, snacks, and water.
 
@@ -94,7 +94,7 @@ Contestants use organizer-provided laptops and are scored individually. During t
 
 **Prohibited:** Personal electronic devices, including computers, phones, smartwatches, smart glasses, earphones, calculators, external monitors, wireless communication devices, and electronic storage devices; books, manuals, notes, and other written reference materials. Keyboards, mice, medical devices, and supporting phones approved under the procedures below are exceptions.
 
-Requests for personal keyboards, mice, or medical and special arrangements must be submitted through registration by the announced deadline before practice.
+Requests to use personal keyboards or mice, or for medical or special arrangements, must be submitted through registration by the announced deadline before practice.
 
 **Personal keyboards and mice:** Requests must include the device's make and model. Devices must be wired, have no wireless capability even when used wired, have no built-in macro or programmable-key functionality, and have no modifications affecting electronic functionality. The SC confirms before practice whether a device may be brought for inspection. Final approval follows inspection and testing during practice. The SC may reject a device even if it meets these requirements.
 
@@ -112,7 +112,7 @@ Questions about task details, rules, or grading may be submitted to the Scientif
 
 - Yes or no.
 - A reference to a section of the task statement, contest rules, or appendix.
-- A request to consult the data and baseline first when the task description is unclear.
+- A request to consult the data and baseline first when the task statement is unclear.
 - A statement that the Python environment cannot be changed during the contest.
 - A request to rephrase the question in yes/no format.
 
@@ -122,7 +122,7 @@ The Scientific Committee may decline ambiguous or unclear questions, or question
 
 For laptop, network, or other technical problems, raise the colored card as instructed by the organizers. Assistance staff address technical issues but do not answer task questions.
 
-### 2.7. Evaluation, Feedback and Final Submission Selection
+### 2.7. Evaluation, Feedback, and Final Submission Selection
 
 Tasks use the following data for development and evaluation. Task statements may specify different development or validation arrangements.
 
@@ -138,11 +138,11 @@ The Validation Leaderboard is public, showing contestant or team identities, the
 
 It updates live until one hour before the scheduled end of each contest, then stays frozen until after the closing ceremony. During the freeze, private submission feedback shows evaluation status and raw validation metrics only. Updated normalized scores and normalization targets are withheld until the leaderboard is unfrozen.
 
-#### Selecting submissions for final scoring
+#### Selecting Submissions for Final Scoring
 
 Each participant may select **up to two distinct submissions per task** before their contest deadline, including submissions still queued or running.
 
-| Explicitly selected submissions | Submissions evaluated on the hidden test dataset |
+| Explicitly selected submissions | Submissions evaluated on the hidden test data |
 | --- | --- |
 | Two | Both selected submissions. |
 | One | The selected submission and the remaining submission with the highest validation score. |
@@ -158,7 +158,7 @@ If a selected submission fails validation after the deadline, the TL must appeal
 
 Each task receives a final score from **0 to 100**. If a task has subtasks, their contributions are combined into one task metric as specified in the task statement. Normalization is applied once to the task score, not separately to subtasks.
 
-#### Metric direction
+#### Metric Direction
 
 The task statement defines the raw metric and whether higher or lower values are better. Convert it to a higher-is-better score before normalization:
 
@@ -179,7 +179,7 @@ Max_Score = max(Reference_Score, Max_Submission)
 Norm_Score = 100 × (Submission_Score - Min_Score) / (Max_Score - Min_Score)
 ```
 
-The 0.9 factor allows a margin below the committee’s improvement over the baseline, making full marks more attainable. A higher contestant score raises the target.
+The 0.9 factor allows a margin below the committee’s improvement over the baseline, making full marks more attainable. A higher participant score raises the target.
 
 Clamp `Norm_Score` to 0–100.
 
@@ -196,7 +196,7 @@ The Scientific Committee guarantees finite baseline and reference scores with **
 
 Validation scores and their reference values are computed on validation data. Final test scores, including the baseline, Scientific Committee score, and highest selected submission score used for normalization, are computed on test data.
 
-**Higher is better (accuracy).** With submission accuracy 85%, baseline accuracy 60%, Scientific Committee accuracy 95%, and best contestant accuracy 90% on the same dataset:
+**Higher is better (accuracy).** With submission accuracy 85%, baseline accuracy 60%, Scientific Committee accuracy 95%, and best participant accuracy 90% on the same dataset:
 
 ```text
 Submission_Score = 0.85
@@ -210,7 +210,7 @@ Norm_Score = 100 × (0.85 - 0.60) / (0.915 - 0.60)
 Displayed score = 79.3651
 ```
 
-**Lower is better (RMSE).** With submission RMSE 3, baseline RMSE 5, Scientific Committee RMSE 2, and best contestant RMSE 2.5 on the same dataset:
+**Lower is better (RMSE).** With submission RMSE 3, baseline RMSE 5, Scientific Committee RMSE 2, and best participant RMSE 2.5 on the same dataset:
 
 ```text
 Submission_Score = -3
@@ -224,7 +224,7 @@ Norm_Score = 100 × (-3 - (-5)) / (-2.3 - (-5))
 Displayed score = 74.0741
 ```
 
-All raw metrics, conversions, normalization, and summation use IEEE 754 double precision with no intermediate rounding. Reports, scoreboards, and certificates display four decimal places. Rankings, submission-selection comparisons, and medal boundaries use full-precision values.
+All raw metrics, conversions, normalization, and summation use IEEE 754 double precision with no intermediate rounding. Reports, leaderboards, and certificates display four decimal places. Rankings, submission-selection comparisons, and medal boundaries use full-precision values.
 
 A submission that times out, exceeds memory limits, crashes, produces malformed output, or yields a non-finite metric receives **0 points**, without applying metric conversion or normalization. A task with no submission receives **0 points**.
 
@@ -232,9 +232,9 @@ All submissions count against the submission limit, including failed submissions
 
 If a contestant or team is disqualified from a contest, their submissions are excluded from that contest's normalization. The grading system recalculates the affected validation and test normalization targets, all affected scores and totals, rankings, and medal allocations using the remaining eligible participants. Published results are corrected accordingly.
 
-A contestant's final task score is the **higher normalized test score of their two selected submissions**. If only one submission is available, its test score counts; if neither produces a valid result, the task score is 0.
+A participant's final task score is the **higher normalized test score of their two selected submissions**. If only one submission is available, its test score counts; if neither produces a valid result, the task score is 0.
 
-#### Final ranking and ties
+#### Final Ranking and Ties
 
 Participants are ranked by higher full-precision total test score, then lower total submission time. Remaining ties share a rank.
 
@@ -246,7 +246,7 @@ Warnings are given 15, 5, and 1 minute before the end. When the contest ends, co
 
 Substantial technical problems may justify extra time, decided case by case. Contestants must report technical issues immediately as described in Section 2.6.
 
-The Scientific Committee may grant an extension before or after the scheduled end, including for incidents reported immediately before the deadline. Contestants must stop at their current deadline and wait for instructions. If an extension is granted, organizers specify when work resumes and the revised deadline. The revised deadline applies to submissions and final-submission selections.
+The Scientific Committee may grant an extension before or after the scheduled end, including for incidents reported immediately before the deadline. Contestants must stop at their current deadline and wait for instructions. If an extension is granted, organizers specify when work resumes and the revised deadline. The revised deadline applies to submissions and final submission selections.
 
 ### 2.10. Cheating and Violations
 
@@ -259,24 +259,24 @@ Cheating is prohibited, including:
 
 ### 2.11. Results and Appeals
 
-#### Results after the contest
+#### Results After the Contest
 
 1. All contestants leave the hall.
-2. Once all validation evaluations are complete and submissions selected under Section 2.7, the selected submissions are evaluated on hidden test data.
+2. Once all validation evaluations are complete and submissions have been selected under Section 2.7, the selected submissions are evaluated on hidden test data.
 3. TLs and their contestants may enter for supervised inspection of their own laptops and submissions to prepare appeals.
 4. Contestants are shown their best selected submission score on the Test Leaderboard for each task, both before and after normalization, without rankings. TLs receive these scores for all three contestants in the Individual Contest or for their team in the Team Contest.
 5. TLs and contestants must keep these scores confidential from other teams until the closing ceremony.
 6. Official test rankings are withheld until the closing ceremony. Afterward, the Validation Leaderboard is unfrozen and both final leaderboards are published for everyone.
 
-#### Appeal process
+#### Appeal Process
 
 All appeals must be submitted by Team Leaders. A TL may appeal for an individual contestant or for the entire team in the Team Contest.
 
 Appeals may be submitted immediately after each contest ends. The closing deadline will be announced in the event schedule. Submission instructions and required information will be announced separately.
 
-The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL, who must reply promptly. The committee may meet the TL, and possibly the affected contestant, in person. The SC's decisions on appeals are final. They are shared with the General Assembly at its first meeting after those decisions for information, not further approval or review.
+The Scientific Committee reviews all appeals. If it needs more information, it contacts the TL, who must reply promptly. The committee may meet the TL, and possibly the affected contestant, in person. The SC's decisions on appeals are final. The decisions are shared with the General Assembly at its next meeting for information only; they are not subject to further approval or review.
 
-## 3. Medals, Trophy and Certificates
+## 3. Awards, Certificates, and Results
 
 ### 3.1. Medals
 
@@ -286,20 +286,20 @@ In either contest, contestants or teams still tied at a medal boundary after the
 
 ### 3.2. Team Champion Trophy
 
-The Team Champion Trophy will be awarded to the highest-ranked team in the Team Contest. The trophy will be retained by the contest organisation and carried forward as a challenge trophy for the subsequent edition of ICAIC. The name of the winning team will be engraved on the trophy.
+The Team Champion Trophy will be awarded to the highest-ranked team in the Team Contest. The contest organization will retain the trophy for use as a challenge trophy at the next edition of ICAIC. The name of the winning team will be engraved on the trophy.
 
 ### 3.3. Certificates
 
-#### 3.3.1. Participation Certificate
+#### Participation Certificate
 
 Participation certificates are awarded to everyone officially involved, including contestants, team leaders, guests, volunteers, Scientific Committee and board members, host scientific, technical, and organizing committee members, and sponsors.
 
-Each certificate includes the participant's name, role, and country. It is signed by ICAIC's Executive Director, with additional signatures at ICAIC's discretion.
+Each certificate includes the recipient's name, role, and country. It is signed by ICAIC's Executive Director, with additional signatures at ICAIC's discretion.
 
-#### 3.3.2. Achievement Certificate
+#### Achievement Certificate
 
 Achievement certificates are awarded to contestants or teams winning official medals or awards. Each includes the contestant's or team's name, country, and achievement, such as a medal, award, or honorable mention. Certificates are signed by ICAIC's Executive Director and the Chair of the Scientific Committee.
 
 ### 3.4. Publication of Results
 
-Results, scoreboards, medals, and awards are published on the official ICAIC website. Questions or suggestions about contest rules should be sent to [sc@icaic.sg](mailto:sc@icaic.sg).
+Results, leaderboards, medals, and awards are published on the official ICAIC website. Questions or suggestions about contest rules should be sent to [sc@icaic.sg](mailto:sc@icaic.sg).
