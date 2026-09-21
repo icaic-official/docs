@@ -12,6 +12,8 @@ These rules cover the Individual Contest and Team Contest of the International C
 
 The **Scientific Committee (SC)** has final authority to interpret these rules, adjudicate unforeseen situations, determine results, and decide appeals.
 
+If documents conflict, the order of precedence is: **task statement → Contest Rules → Technical Appendix → Syllabus**. Task-specific overrides do not change eligibility, conduct rules, or hard limits. Official SC clarifications supersede earlier wording.
+
 Each university designates a **Team Leader (TL)** as its non-competing representative, separate from the three contestants. The TL handles administrative matters and appeals, and ensures that the contestants understand and follow the rules. The TL does not participate in solving contest tasks or assist contestants during either contest.
 
 ## 1. General Requirements
@@ -264,7 +266,7 @@ Cheating is prohibited, including:
 1. All contestants leave the hall.
 2. Once all validation evaluations are complete and submissions have been selected under Section 2.7, the selected submissions are evaluated on hidden test data.
 3. TLs and their contestants may enter for supervised inspection of their own laptops and submissions to prepare appeals.
-4. Contestants are shown their best selected submission score on the Test Leaderboard for each task, both before and after normalization, without rankings. TLs receive these scores for all three contestants in the Individual Contest or for their team in the Team Contest.
+4. Contestants are shown each selected submission's test score for each task, both before and after normalization, without rankings, along with evaluation verdicts and relevant failure diagnostics. TLs receive this information for all three contestants in the Individual Contest or for their team in the Team Contest.
 5. TLs and contestants must keep these scores confidential from other teams until the closing ceremony.
 6. Official test rankings are withheld until the closing ceremony. Afterward, the Validation Leaderboard is unfrozen and both final leaderboards are published for everyone.
 

@@ -222,13 +222,19 @@ Each topic has a knowledge category (theory, practice, or both) and a depth leve
 | Scalability and implementation | Sparse operations, neighbor sampling, mini-batching, memory constraints, and graph data loaders. | P | E |
 | Domain and physical constraints | Directional flow, conservation, topology-aware losses, and integrating scientific priors into graph models. | B | E |
 
-## 14. Task Design and Assessment
+## 14. Contest Tasks
 
-- Tasks may require writing code, fitting models, running inference, producing predictions, analyzing results, or combining these activities.
-- A task may span multiple data modalities, including tabular data, images, text, audio, video, time series, sensor streams, and graphs.
-- Contestants should not be expected to memorize obscure library APIs; task design should reward reasoning, modeling, data handling, and experimentation.
-- Tasks should permit meaningful partial solutions, including simple baselines, feature-based methods, classical ML, and progressively stronger models where appropriate.
-- Evaluation should use clearly defined metrics and splits that prevent identity, temporal, group, or near-duplicate leakage. Test data and reference answers (where applicable) should remain hidden from contestants.
+### What to Expect
+
+- Tasks involve implementing solutions, training or using models, producing predictions, or choosing actions in interactive environments.
+- A task may combine tabular data, images, text, audio, video, time series, sensor streams, or graphs.
+- Solving a task involves adapting methods to its data and constraints, testing ideas, and using the results to improve the solution within the time and compute budget.
+- Solutions that improve on the baseline can earn partial credit. Stronger solutions may combine several insights.
+
+### What Not to Expect
+
+- Solving a task simply by applying an off-the-shelf model or method unchanged.
+- Questions that depend on memorizing obscure library APIs.
 
 ## 15. Recommended Preparation Resources
 

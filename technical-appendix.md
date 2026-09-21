@@ -25,7 +25,7 @@ This appendix applies to **both the Individual Contest and the Team Contest**. E
 
 ## 2. Available Python Packages
 
-The listed version families may change following installation and GPU compatibility testing. Final package versions will be published with the finalized contest image before the contest. The finalized image is identical for all contestants.
+The listed version families may change following installation and GPU compatibility testing. Final package versions will be published before the contest. Within each contest, all participants use the same software environment.
 
 | Category | Package | Version family |
 | --- | --- | --- |
@@ -87,6 +87,8 @@ Training and evaluation use **Amazon EC2 `g6.xlarge`** instances:
 | System memory | 16 GiB |
 | Local instance storage | 250 GB NVMe SSD |
 
+Each individual contestant or team has a dedicated GPU allocation for development.
+
 ### 3.3. Pretrained Models
 
 The approved pretrained-model list will be published before the contest. Approved checkpoints and their required supporting files will be pre-cached in the contest environment. Contestants may use only models explicitly provided by the organizers. Documentation for approved models will be available offline.
@@ -95,12 +97,19 @@ The approved pretrained-model list will be published before the contest. Approve
 
 Required datasets and documentation are provided within the contest environment.
 
-## 5. Submission and Evaluation Limits
+The tentative plan is to provide offline documentation through DevDocs for all listed packages. The final documentation collection and any additional offline references will be confirmed with the finalized appendix.
+
+## 5. Submission and Evaluation
 
 | Limit | Rule |
 | --- | --- |
-| Evaluation runtime | Maximum **10 minutes per submission**, unless the task statement explicitly states otherwise |
+| Evaluation runtime | Maximum **10 minutes per evaluation run**, unless the task statement explicitly states otherwise |
 | Submissions | Maximum **15 submissions per task per individual contestant or team** |
-| Concurrent submissions | Permitted; submissions enter a queue and results appear when ready |
+| Upload size | **100 MB hard limit per submission**; tasks may set lower limits |
 
-Runtime limits are measured in wall-clock time. The per-submission limit applies to each evaluation run, including any training, model loading, preprocessing, and inference performed within that run.
+**Notes:**
+
+- Multiple submissions may be queued concurrently.
+- Runtime limits use wall-clock time and include training, model loading, preprocessing, and inference within the evaluation run.
+- Submitted files are fixed at submission time; later edits do not affect them.
+- Task statements specify submission requirements and evaluation procedures.
