@@ -6,237 +6,160 @@ nav_order: 2
 
 # Syllabus
 
-**Updated: 21 September 2026.**
+**Updated: 28 September 2026.**
 
-## 1. Topic Categories and Depth Levels
+## 1. Foundational Mathematics and Programming
 
-Each topic has a knowledge category (theory, practice, or both) and a depth level (core or extended).
+- Linear algebra
+- Calculus
+- Probability
+- Statistics and estimation
+- Numerical computation
+- Discrete mathematics and graphs
+- Python programming
+- NumPy and array manipulation
+- Pandas and structured data
+- Visualization
 
-### Knowledge Category
+## 2. Artificial Intelligence Foundations
 
-| Category | Meaning |
+| Topic | Expected competency |
 | --- | --- |
-| Theory (T) | Understand the main concepts, assumptions, mechanisms, and standard equations. Proof-heavy derivations are not expected unless explicitly stated. |
-| Practice (P) | Use appropriate libraries and tools, implement or adapt methods, train and debug models, and interpret outputs. |
-| Both (B) | Demonstrate both conceptual understanding and practical implementation ability. |
+| Intelligent agents | Agents, environments, observations, actions, goals, utility, rationality, and the perception-action loop. |
+| Search | Uninformed and heuristic search; completeness, optimality, computational complexity, and the design and evaluation of heuristics. |
+| Adversarial search | Reason about competing actions, evaluate game states, reduce unnecessary exploration, and balance search depth against compute cost. |
+| Constraint satisfaction | Represent variables, domains, and constraints; find feasible assignments and reduce the search space. |
+| Planning | State-space planning, action models, goals, planning graphs, and the relation between planning and search. |
+| Knowledge representation and logic | Propositional and first-order logic, inference, rule systems, ontologies, and limitations of symbolic representations. |
+| Probabilistic reasoning | Represent dependencies between random variables, perform exact or approximate inference, and update beliefs from sequential observations. |
+| Decision theory | Expected utility, risk, value of information, and decisions under uncertainty. |
+| Multi-agent systems and game theory | Cooperation, competition, equilibria, basic mechanism design, and decentralized decision making. |
 
-### Depth Level
+## 3. Machine Learning Foundations and Practice
 
-| Level | Meaning |
+| Topic | Expected competency |
 | --- | --- |
-| Core (C) | May be assessed directly without a task-specific tutorial. |
-| Extended (E) | May be assessed when supported by starter material, a provided implementation, or sufficient explanation in the task statement. |
+| Prediction tasks | Model continuous targets and class probabilities; understand feature transformations, decision boundaries, residuals, model complexity, and interpretation. |
+| Data preparation and feature engineering | Handle missing values, scale inputs, encode categorical data, construct informative features, and build preprocessing and model pipelines. |
+| Information theory and learning objectives | Measure uncertainty, information shared between variables, and differences between distributions; relate these quantities to learning objectives. |
+| Statistical estimation and uncertainty | Estimate model parameters and predictive uncertainty, incorporate prior knowledge, and account for uncertainty when comparing multiple hypotheses. |
+| Optimization | Use gradients to update model parameters, choose how much data to use per update, and diagnose convergence and numerical stability. |
+| Regularization | Control model complexity and overfitting through training constraints, data variation, and validation-based model selection. |
+| Hyperparameter optimization | Explore hyperparameter settings, allocate search budgets, and decide when to stop trials using validation results. |
+| Validation and model evaluation | Separate training, validation, and test data; respect group structure, prevent leakage, isolate the effects of changes, and reproduce experiments. Select metrics for classification, ranking, and regression; assess calibration and subgroup errors. |
+| Class imbalance and cost-sensitive learning | Account for unequal class frequencies and error costs when preparing data, defining objectives, and selecting decision thresholds. |
+| Semi-supervised and weakly supervised learning | Learn from combinations of labeled, unlabeled, and imperfectly labeled data; assess the reliability of supervision and resulting predictions. |
+| Domain shift and generalization | Covariate shift, label shift, domain adaptation, invariance, and robust validation. |
+| Efficient data pipelines | Caching, batching, parallel loading, memory mapping, sparse data, and profiling time and memory use. |
 
-## 2. General Competencies
+## 4. Classical Statistical Learning
 
-- Understand the task, data schema, target, constraints, evaluation metric, and submission format.
-- Inspect data, identify quality issues, establish a simple baseline, and design a suitable validation strategy.
-- Select methods that match the data modality, dataset size, compute budget, and evaluation objective.
-- Implement, train, debug, profile, and compare models using the provided Python environment.
-- Recognize leakage, overfitting, distribution shift, class imbalance, unstable training, and metric misuse.
-- Interpret experiments and make evidence-based improvements under time and compute constraints.
-- Produce deterministic outputs and correctly formatted submissions.
+| Topic | Expected competency |
+| --- | --- |
+| Similarity-based prediction | Predict from similar examples; choose distance measures, account for feature scale, and balance local detail against computational cost. |
+| Tree-based models and ensembles | Partition feature spaces, control model complexity, handle missing values, and combine predictions from multiple models; assess interpretability and robustness. |
+| Margin-based and kernel methods | Understand separation margins, nonlinear similarity functions, decision boundaries, and scaling considerations. |
+| Probabilistic classifiers | Model class probabilities and feature distributions, assess assumptions about dependencies, and interpret predictive uncertainty. |
+| Clustering | Group similar examples, choose similarity measures and grouping assumptions, handle noise, and assess cluster quality. |
+| Dimensionality reduction | Select or transform features into compact representations; assess retained information and the limits of low-dimensional visualizations. |
+| Anomaly and novelty detection | Model expected behavior, score departures from it, and select detection thresholds using suitable validation data. |
 
-## 3. Mathematics, Statistics, and Optimization
+## 5. Neural Networks and Deep Learning
 
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Linear algebra | Vectors, matrices, tensors, dot products, matrix multiplication, norms, rank, projections, eigenvalues/eigenvectors, and singular value decomposition. | B | C |
-| Calculus and automatic differentiation | Derivatives, partial derivatives, gradients, chain rule, Jacobian/Hessian intuition, computational graphs, and backpropagation. | B | C |
-| Probability | Random variables, common distributions, expectation, variance, covariance, conditional probability, Bayes' rule, independence, and sampling. | B | C |
-| Statistics and estimation | Likelihood, maximum likelihood, bias-variance trade-off, confidence intervals, bootstrap, and basic hypothesis testing. | B | C |
-| Information theory | Entropy, cross-entropy, KL divergence, mutual information, and their use in learning objectives. | B | C |
-| Optimization | Gradient descent, stochastic and mini-batch optimization, momentum, Adam/AdamW, learning-rate schedules, constrained optimization intuition, and convergence diagnostics. | B | C |
-| Numerical computation | Floating-point behavior, numerical stability, vectorization, memory use, computational complexity, and stable implementations of common operations. | B | C |
-| Discrete mathematics and graphs | Sets, relations, combinatorics, recursion, dynamic programming, graph terminology, paths, connectivity, and adjacency representations. | B | C |
-| Advanced statistical foundations | Bayesian estimation, posterior prediction, multiple testing, and uncertainty quantification at a conceptual and applied level. | B | E |
+| Topic | Expected competency |
+| --- | --- |
+| Feedforward networks | Layered computation, nonlinear representations, approximation capability, and network capacity. |
+| Activations and losses | Choose activation functions and training objectives suited to the target and output constraints; understand their effects on gradients and prediction errors. |
+| Neural network training and diagnosis | Compute gradients through computational graphs, update parameters, and control update sizes; vary training difficulty or sequence length, and diagnose instability and forgetting using learning curves, gradient behavior, and controlled experiments. |
+| PyTorch and CPU/GPU execution | Tensor manipulation, datasets and data loaders, modules, losses, optimizers, training loops, evaluation mode, checkpointing, random seeds, device placement, batch sizes, mixed precision, and memory management. |
+| Initialization and normalization | Choose initial parameters and normalize inputs or internal representations; understand their effects on gradient flow and training stability. |
+| Embeddings and pooling | Learn representations for text, images, audio, and categorical data; aggregate variable-sized inputs into useful representations. |
+| Convolutional networks | Local feature extraction, shared parameters, spatial resolution, receptive fields, and applications to images and time series. |
+| Recurrent sequence models | Maintain and update hidden state, process variable-length sequences, and understand how gradients behave over long dependencies. |
+| Attention and transformers | Attention-based interactions between inputs, position information, visibility constraints, information flow between layers, and training stability. |
+| Reconstruction-based representation learning | Learn compact representations by reconstructing inputs; assess reconstruction quality, robustness to corrupted inputs, and generative use. |
+| Transfer learning and fine-tuning | Reuse pretrained representations, prepare adaptation data, and choose which parameters to update under memory and compute constraints; assess transfer quality and loss of previously learned capabilities. |
+| Self-supervised representation learning | Construct supervision from data, learn useful similarities and invariances, and evaluate representations on downstream tasks. |
 
-## 4. Programming, Data Handling, and Experimentation
+## 6. Reinforcement Learning and Sequential Decision Making
 
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Python programming | Control flow, functions, modules, classes, comprehensions, iterators, exceptions, file handling, and standard data structures. | P | C |
-| NumPy and tensor manipulation | Indexing, broadcasting, reshaping, masking, vectorized computation, reductions, and multi-dimensional array operations. | P | C |
-| Pandas and structured data | DataFrames, joins, grouping, aggregation, missing values, categorical variables, time indices, and efficient input/output. | P | C |
-| Visualization | Use Matplotlib and Seaborn to inspect distributions, learning curves, errors, embeddings, predictions, and model behavior. | P | C |
-| Scikit-learn and boosting libraries | Build pipelines and use scikit-learn, XGBoost, LightGBM, or CatBoost appropriately for classical ML tasks. | P | C |
-| PyTorch fundamentals | Tensors, datasets and data loaders, modules, losses, optimizers, device placement, training loops, evaluation mode, and checkpointing. | P | C |
-| CPU/GPU execution | Move data and models correctly, manage device memory, choose batch sizes, use mixed precision when appropriate, and diagnose bottlenecks. | P | C |
-| Data processing | Normalization, standardization, imputation, padding, masking, tokenization, patching, resampling, augmentation, and variable-length data handling. | P | C |
-| Feature engineering | Create compact, informative features from tabular, categorical, image, text, audio, graph, and time-series data. | B | C |
-| Validation and experimental design | Train/validation/test splitting, cross-validation, grouped and temporal splits, ablation studies, and prevention of data leakage. | B | C |
-| Metrics and error analysis | Select, implement, and interpret task-appropriate metrics; inspect confusion matrices, ROC/PR curves, calibration, and subgroup performance. | B | C |
-| Hyperparameter optimization | Manual search, grid/random search, efficient search strategies, early stopping, and fair model comparison. | P | C |
-| Reproducibility and code quality | Random seeds, deterministic behavior, configuration management, logging, assertions, tests, clean notebooks, and reusable functions. | P | C |
-| Efficient data pipelines | Caching, batching, parallel loading, memory mapping, sparse data, and profiling time and memory usage. | P | E |
+| Topic | Expected competency |
+| --- | --- |
+| Multi-armed bandits | Balance exploration and exploitation, use uncertainty to guide action selection, and assess cumulative performance relative to the best action. |
+| Markov decision processes and value functions | States, actions, transitions, rewards, policies, returns, discounting, and episodic or continuing tasks; relate state and action values to future rewards. |
+| Planning with known dynamics | Evaluate and improve policies using known transitions and rewards; understand convergence and computational trade-offs. |
+| Value estimation from experience | Estimate future returns from complete or partial trajectories, combine observed rewards with current value estimates, and understand estimation bias and variance. |
+| Learning control policies | Improve action selection from experience, distinguish data collected by the current policy from data collected by other policies, and manage exploration. |
+| Function approximation and deep RL | Approximate values or policies with neural networks, reuse collected experience, and diagnose instability caused by changing targets and correlated data. |
+| Policy optimization | Optimize expected return directly, use value estimates to guide policy updates, reduce update variance, and balance improvement against policy stability. |
+| Reward design | Define rewards for goals and constraints, handle sparse feedback, and recognize unintended incentives. |
+| Imitation, offline, and model-based RL | Learn from demonstrations or fixed datasets, account for limited data coverage, learn environment dynamics, and plan with imperfect models. |
+| RL evaluation and reproducibility | Evaluate across multiple random seeds and episodes; compare return distributions, sample efficiency, and training stability. |
+| Multi-agent reinforcement learning | Cooperative and competitive settings, non-stationarity, centralized training, and decentralized execution. |
 
-## 5. Artificial Intelligence Foundations
+## 7. Computer Vision
 
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Intelligent agents | Agents, environments, observations, actions, goals, utility, rationality, and the perception-action loop. | T | C |
-| Uninformed search | Breadth-first, depth-first, uniform-cost, iterative deepening, completeness, optimality, and complexity. | B | C |
-| Informed and heuristic search | Greedy best-first search, A*, admissibility, consistency, heuristic design, and beam search. | B | C |
-| Adversarial search | Minimax, alpha-beta pruning, evaluation functions, stochastic games, and search-depth trade-offs. | B | C |
-| Constraint satisfaction | Variables, domains, constraints, backtracking, propagation, ordering heuristics, and local search. | B | C |
-| Planning | State-space planning, action models, goals, planning graphs, and the relation between planning and search. | B | E |
-| Knowledge representation and logic | Propositional and first-order logic, inference, rule systems, ontologies, and limitations of symbolic representations. | T | E |
-| Probabilistic reasoning | Bayesian networks, conditional independence, exact and approximate inference, hidden Markov models, and sequential belief updates. | B | E |
-| Decision theory | Expected utility, risk, value of information, and decisions under uncertainty. | T | E |
-| Multi-agent systems and game theory | Cooperation, competition, equilibria, basic mechanism design, and decentralized decision making. | T | E |
+| Topic | Expected competency |
+| --- | --- |
+| Image processing and augmentation | Pixels, channels, color spaces, spatial resolution, input scaling, and controlled image transformations that preserve valid labels. |
+| Image classification | Train and adapt classifiers to assign image-level labels using pretrained image representations. |
+| Object detection | Localize and classify objects, represent bounding boxes, handle duplicate predictions, and evaluate localization and recognition quality. |
+| Image segmentation | Assign labels to pixels and distinguish object instances; choose suitable training objectives and evaluate region overlap and boundary quality. |
+| Generative vision | Learn image distributions, condition generation on inputs, produce samples, and understand limitations of generation quality and evaluation. |
+| Video and temporal vision | Frame sampling, temporal pooling, motion features, sequence models, and video classification. |
 
-## 6. Classical Statistical Learning
+## 8. Natural Language Processing, Speech, and Audio
 
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Problem formulation | Regression, classification, ranking, clustering, density estimation, anomaly detection, and structured prediction. | B | C |
-| Linear regression | Least squares, feature transformations, residual analysis, regularization, and interpretation. | B | C |
-| Logistic regression | Log-odds, cross-entropy, decision thresholds, multiclass extensions, and calibration. | B | C |
-| Regularization | L1 and L2 penalties, sparsity, weight decay, model capacity, and the bias-variance trade-off. | B | C |
-| K-nearest neighbors | Distance metrics, scaling, neighborhood size, classification/regression, and computational trade-offs. | B | C |
-| Decision trees | Splitting criteria, pruning, depth control, missing values, and interpretability. | B | C |
-| Ensembles | Bagging, random forests, gradient boosting, stacking, and when ensembles improve robustness. | B | C |
-| Support vector machines and kernels | Margins, soft-margin SVMs, kernel functions, and scaling considerations. | B | C |
-| Probabilistic classifiers | Naive Bayes, linear/quadratic discriminant analysis, posterior probabilities, and calibration. | B | E |
-| Model evaluation | Accuracy, precision, recall, F1, log loss, ROC-AUC, PR-AUC, ranking metrics, regression errors, and task-specific metrics. | B | C |
-| Class imbalance and cost-sensitive learning | Resampling, class weights, threshold selection, focal-style objectives, and asymmetric error costs. | B | C |
-| Clustering | K-means, hierarchical clustering, DBSCAN, spectral clustering, assumptions, and cluster validation. | B | C |
-| Dimensionality reduction | PCA, t-SNE, UMAP, feature selection, visualization, and limits of low-dimensional projections. | B | C |
-| Semi-supervised and weakly supervised learning | Pseudo-labeling, consistency ideas, noisy labels, and use of unlabeled data. | B | E |
-| Anomaly and novelty detection | One-class methods, isolation-based methods, reconstruction error, and thresholding. | B | E |
-| Domain shift and generalization | Covariate shift, label shift, domain adaptation, invariance, and robust validation. | B | E |
+| Topic | Expected competency |
+| --- | --- |
+| Text preprocessing and tokenization | Sentence, word, and subword tokenization, vocabularies, padding, masking, and sequence-length handling. |
+| Text representations and encoders | Frequency-based and learned text representations, contextual information, similarity measures, sequence aggregation, and adaptation to downstream tasks. |
+| Text classification and sequence labeling | Assign labels to documents or individual tokens; handle label dependencies and align token predictions with the original text. |
+| Language modeling and sequence-to-sequence learning | Predict text from preceding or surrounding context, map input sequences to output sequences, assess predictive likelihood, and apply models to translation and summarization. |
+| Retrieval and semantic search | Dense and sparse retrieval, embeddings, similarity, reranking, and retrieval evaluation. |
+| Audio and signal representations | Waveforms, sampling rate, resampling, framing, time-frequency representations, and normalization. |
+| Speech and audio models | Use provided models to recognize, transcribe, or interpret speech and other audio; prepare inputs and evaluate outputs for the task. |
 
-## 7. Neural Networks and Deep Learning
+## 9. Foundation Models and Large Language Models
 
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Perceptrons and multilayer networks | Perceptron basics, multilayer perceptrons, universal approximation intuition, and network capacity. | B | C |
-| Activations and losses | ReLU, sigmoid, tanh, softmax, MSE, MAE, cross-entropy, margin losses, and task-appropriate objectives. | B | C |
-| Backpropagation | Forward and backward passes, computational graphs, gradient flow, and common implementation errors. | B | C |
-| Optimization for deep learning | Apply the optimization methods in Section 3 to neural networks; learning-rate warmup and gradient clipping. | B | C |
-| Initialization and normalization | Weight initialization, batch normalization, layer normalization, and their effects on training. | B | C |
-| Regularization | Dropout, early stopping, weight decay, augmentation, label smoothing, and model selection. | B | C |
-| Embeddings and pooling | Learned representations for text, images, audio, categories, and graphs; max, average, and attention pooling. | B | C |
-| Convolutional networks | Convolution, stride, padding, receptive fields, pooling, residual connections, and image/time-series use. | B | C |
-| Recurrent sequence models | RNNs, LSTMs, GRUs, hidden state, sequence batching, teacher forcing, and vanishing/exploding gradients. | B | C |
-| Attention and transformers | Attention mechanisms, self-attention, encoder/decoder blocks, masking, and positional information. | B | C |
-| Autoencoders | Undercomplete, denoising, and variational autoencoders for representation learning and generation. | B | C |
-| Transfer learning and fine-tuning | Pretrained encoders, feature extraction, full fine-tuning, parameter-efficient fine-tuning, and catastrophic forgetting. | B | C |
-| Self-supervised and contrastive learning | Pretext tasks, augmentations, positive/negative pairs, contrastive objectives, and representation evaluation. | B | E |
-| Training diagnosis | Learning curves, gradient checks, dead activations, unstable loss, overfitting, underfitting, and systematic ablations. | P | C |
+| Topic | Expected competency |
+| --- | --- |
+| Prompting and context management | Design instructions and examples, organize complex tasks, select relevant context, handle context limits, and evaluate prompt effectiveness. |
+| Structured generation and decoding | Choose outputs from predicted distributions, balance diversity and reliability, enforce output constraints, validate and repair outputs, and define stopping criteria. |
+| Preference and reinforcement-based adaptation | Learn from preferences and reward signals, optimize model behavior, and assess trade-offs between task performance and adherence to desired behavior. |
+| Retrieval-augmented generation | Select and organize retrieved evidence for generation, ground responses in that evidence, and evaluate factual support and citation accuracy. |
+| Tool use and agents | Function/tool calling, planning loops, memory, state tracking, environment feedback, and rule-constrained actions. |
+| LLM evaluation | Assess output validity, factual accuracy, hallucination, robustness to prompt variations, human preferences, and contamination risks. |
+| Inference efficiency | Reduce computation and memory use, process requests efficiently, reuse intermediate results, and balance sequence length, model size, latency, and output quality. |
+| Multimodal foundation models | Joint text-image-audio inputs, modality encoders, fusion, prompting, and cross-modal evaluation; image-text similarity, retrieval, and classification using text descriptions. |
+| LLM safety and security | Prompt injection, jailbreaks, data leakage, unsafe outputs, tool misuse, and defensive validation. |
 
-## 8. Reinforcement Learning and Sequential Decision Making
+## 10. Learning from Time Series, Sequences, and Sensor Data
 
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Multi-armed bandits | Exploration-exploitation trade-off, epsilon-greedy methods, upper-confidence ideas, and regret intuition. | B | C |
-| Markov decision processes | States, actions, transitions, rewards, policies, returns, discounting, and episodic/continuing tasks. | B | C |
-| Value functions and Bellman equations | State/action values, Bellman expectation and optimality equations, and fixed-point intuition. | B | C |
-| Dynamic programming | Policy evaluation, policy iteration, and value iteration when a model is known. | B | C |
-| Monte Carlo and temporal-difference learning | Prediction from experience, bootstrapping, TD error, n-step returns, and eligibility-trace intuition. | B | C |
-| Control methods | SARSA, Q-learning, on-policy vs off-policy learning, and exploration strategies. | B | C |
-| Function approximation and deep RL | Value approximation, DQN, replay buffers, target networks, and instability sources. | B | E |
-| Policy-gradient and actor-critic methods | REINFORCE, baselines, advantages, actor-critic structure, entropy regularization, and PPO. | B | E |
-| Reward design and curriculum learning | Sparse rewards, shaping, rewards for satisfying constraints and penalties for violations, staged objectives, and unintended incentives. | B | E |
-| Imitation, offline, and model-based RL | Behavior cloning, offline data limitations, learned dynamics, planning with models, and sim-to-real intuition. | B | E |
-| RL evaluation and reproducibility | Apply evaluation and reproducibility methods from Section 4; multiple seeds, return distributions, sample efficiency, and stability. | B | C |
-| Multi-agent reinforcement learning | Cooperative and competitive settings, non-stationarity, centralized training, and decentralized execution. | B | E |
+| Topic | Expected competency |
+| --- | --- |
+| Sampling and preprocessing | Sampling frequency, windows, overlap, resampling, synchronization, variable-length sequences, event segmentation, filtering, detrending, outliers, and leakage-safe transformations. |
+| Statistical and frequency-domain features | Summarize distributions, temporal dependence, periodicity, and signal energy to construct informative features. |
+| Classical forecasting | Model trends, seasonality, and dependence on past observations; establish baseline forecasts and assess modeling assumptions. |
+| Multi-step forecasting | Use multivariate input sequences to predict individual future values or output sequences; predict multiple steps jointly or feed predictions into later steps, and assess training and inference differences, error accumulation, and horizon selection. |
+| Temporal validation and metrics | Respect chronology and event boundaries, evaluate across forecast periods, choose error measures suited to scale and horizon, and prevent leakage. |
+| Anomaly and change-point detection | Identify unusual observations in temporal context and changes in behavior over time; distinguish isolated anomalies from sustained shifts. |
+| Sequence similarity and alignment | Compare and align sequences while accounting for shifts in timing, phase, and speed; assess the suitability of similarity measures. |
+| Learning from sensor and IMU data | Accelerometer/gyroscope data, axes, orientation effects, sensor fusion, activity recognition, and biometric verification. |
 
-## 9. Computer Vision
-
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Image fundamentals | Pixels, channels, color spaces, resizing, interpolation, normalization, and common image formats. | B | C |
-| Convolutional layers | Apply the convolutional networks in Section 7 to images; kernels and feature maps. | B | C |
-| Image classification | Training classifiers, transfer learning, pretrained encoders such as ResNet, and error analysis. | P | C |
-| Object detection | Bounding boxes, IoU, non-maximum suppression, and practical use of YOLO, SSD, and DETR-style models. | B | C |
-| Image segmentation | Semantic/instance segmentation, pixel-wise losses, U-Net-style models, and overlap metrics. | B | C |
-| Image augmentation | Cropping, flipping, geometric and photometric transforms, mix-based augmentations, and label consistency. | P | C |
-| Vision-language encoders | Joint image-text embeddings, CLIP-style similarity, zero-shot classification, and retrieval. | B | C |
-| Generative vision | GANs, variational methods, diffusion models, conditioning, sampling, and evaluation limitations. | B | C |
-| Video and temporal vision | Frame sampling, temporal pooling, motion features, sequence models, and video classification. | B | E |
-
-## 10. Natural Language Processing, Speech, and Audio
-
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Text preprocessing and tokenization | Apply data processing from Section 4 to text; sentence/word/subword tokenization, vocabularies, and sequence length. | B | C |
-| Text representations | Bag-of-words, TF-IDF, static embeddings, contextual embeddings, and similarity measures. | B | C |
-| Text classification and sequence labeling | Document classification, token classification, class imbalance, and evaluation. | P | C |
-| Pretrained text encoders | BERT-style models, masked-language-model representations, pooling, and fine-tuning. | B | C |
-| Language modeling | Autoregressive and masked objectives, likelihood, perplexity, generation, and decoding. | B | C |
-| Encoder-decoder models | Sequence-to-sequence learning, attention, machine translation, summarization, and multimodal generation. | B | C |
-| Retrieval and semantic search | Dense and sparse retrieval, embeddings, similarity, reranking, and retrieval evaluation. | B | E |
-| Audio and signal representations | Waveforms, sampling rate, resampling, framing, spectrograms, Fourier transforms, and normalization. | B | C |
-| Speech and audio models | Practical use of models such as Whisper, Qwen-Audio, and Voxtral when provided in the contest environment. | P | C |
-
-## 11. Transformers, Foundation Models, and Large Language Models
-
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Transformer mechanics | Scaled dot-product attention, multi-head attention, masking, positional encoding, residual connections, and normalization. | B | C |
-| Architecture families | Encoder-only, decoder-only, encoder-decoder, mixture-of-experts intuition, and modality-specific transformers. | T | C |
-| Tokenization and context | Apply the tokenization methods in Section 10 to foundation models; context windows, truncation, attention masks, and prompt construction. | B | C |
-| Pretraining objectives | Next-token prediction, masked modeling, denoising, instruction tuning, and their behavioral consequences. | T | C |
-| Prompt engineering | Zero-shot/few-shot prompting, role and instruction design, examples, decomposition, context selection, and prompt evaluation. | B | C |
-| Structured generation and decoding | Greedy, beam, sampling, temperature/top-p, constrained outputs, validation, repair, and stopping criteria. | B | C |
-| Fine-tuning and PEFT | Supervised fine-tuning, LoRA/QLoRA, adapters, prompt tuning, dataset construction, and hyperparameter sensitivity. | B | C |
-| Preference and reinforcement-based adaptation | Reward models, RLHF, DPO-style objectives, PPO/GRPO-style optimization, and alignment trade-offs. | B | E |
-| Retrieval-augmented generation | Chunking, embeddings, vector search, retrieval, reranking, grounding, and citation-aware evaluation. | B | E |
-| Tool use and agents | Function/tool calling, planning loops, memory, state tracking, environment feedback, and rule-constrained actions. | B | E |
-| LLM evaluation | Task accuracy, exact match, validity, calibration, hallucination, robustness, preference evaluation, and contamination risks. | B | C |
-| Inference efficiency | Quantization, batching, caching, sequence length, memory/latency trade-offs, and small-model selection. | B | E |
-| Multimodal foundation models | Joint text-image-audio inputs, modality encoders, fusion, prompting, and cross-modal evaluation. | B | E |
-| LLM safety and security | Prompt injection, jailbreaks, data leakage, unsafe outputs, tool misuse, and defensive validation. | B | C |
-| Use of APIs and provided models | Use models and APIs provided for the task. | P | C |
-
-## 12. Learning from Time Series, Sequences, and Sensor Data
-
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Sampling and segmentation | Sampling frequency, windows, overlap, resampling, synchronization, variable-length sequences, and event segmentation. | B | C |
-| Preprocessing | Apply data processing from Section 4 to time series; filtering, detrending, outliers, and leakage-safe transformations. | B | C |
-| Statistical and frequency-domain features | Moments, extrema, autocorrelation, spectral energy, dominant frequencies, and Fourier-based features. | B | C |
-| Classical forecasting | Autoregression, moving averages, seasonality, trend, baseline forecasts, and ARIMA-style intuition. | B | E |
-| Neural sequence models | RNN/LSTM/GRU, temporal CNNs, transformers, sequence-to-one, sequence-to-sequence, and multivariate inputs. | B | C |
-| Multi-step forecasting | Direct and autoregressive prediction, teacher forcing, rollout, exposure bias, error accumulation, and horizon selection. | B | C |
-| Temporal validation and metrics | Chronological splits, rolling evaluation, event-based splits, RMSE/MAE, scale-normalized metrics, and leakage control. | B | C |
-| Anomaly and change-point detection | Point/contextual anomalies, reconstruction/prediction errors, change points, and threshold selection. | B | E |
-| Sequence similarity and alignment | Cross-correlation, dynamic time warping, learned similarity, and invariance to phase or speed. | B | E |
-| Learning from sensor and IMU data | Accelerometer/gyroscope data, axes, orientation effects, sensor fusion, activity recognition, and biometric verification. | B | E |
-| Curriculum and long-horizon training | Progressively increasing sequence difficulty or forecast horizon while monitoring forgetting and stability. | B | E |
-
-## 13. Graph Machine Learning and Geometric Deep Learning
-
-| Topic | Expected competency | Category | Level |
-| --- | --- | --- | --- |
-| Graph representations | Nodes, edges, attributes, directed/undirected graphs, adjacency matrices, edge lists, sparse tensors, and batching. | B | C |
-| Classical graph features | Degree, centrality, neighborhoods, paths, connected components, Laplacian intuition, and handcrafted graph statistics. | B | E |
-| Message passing | Neighborhood aggregation, update functions, receptive fields, permutation invariance, and oversmoothing intuition. | B | C |
-| GNN architectures | GCN, GraphSAGE, GAT, edge-aware message passing, residual connections, and normalization. | B | C |
-| Graph learning tasks | Node classification/regression, link prediction, edge prediction, graph classification/regression, and graph embeddings. | B | C |
-| Pooling and readout | Node-to-graph aggregation, hierarchical pooling intuition, and global representations. | B | E |
-| Graph construction | Building edges from physical relations, similarity, proximity, domain knowledge, and learned connectivity. | B | C |
-| Temporal and spatio-temporal graphs | Dynamic node features, temporal message passing, recurrent/temporal GNNs, and spatio-temporal forecasting. | B | E |
-| Heterogeneous and dynamic graphs | Multiple node/edge types, time-varying topology, relation-specific parameters, and practical representations. | B | E |
-| Scalability and implementation | Sparse operations, neighbor sampling, mini-batching, memory constraints, and graph data loaders. | P | E |
-| Domain and physical constraints | Directional flow, conservation, topology-aware losses, and integrating scientific priors into graph models. | B | E |
-
-## 14. Contest Tasks
+## 11. Contest Tasks
 
 ### What to Expect
 
-- Tasks involve implementing solutions, training or using models, producing predictions, or choosing actions in interactive environments.
+- Tasks involve implementing and adapting solutions, training or using models, producing predictions, or choosing actions in interactive environments within the time and compute budget.
 - A task may combine tabular data, images, text, audio, video, time series, sensor streams, or graphs.
-- Solving a task involves adapting methods to its data and constraints, testing ideas, and using the results to improve the solution within the time and compute budget.
-- Solutions that improve on the baseline can earn partial credit. Stronger solutions may combine several insights.
 
 ### What Not to Expect
 
 - Solving a task simply by applying an off-the-shelf model or method unchanged.
 - Questions that depend on memorizing obscure library APIs.
 
-## 15. Recommended Preparation Resources
+## 12. Recommended Preparation Resources
 
 These resources support preparation. The ICAIC topic tables above define the examinable scope; the recommended reading does not add requirements.
 
@@ -253,4 +176,3 @@ These resources support preparation. The ICAIC topic tables above define the exa
 - Murphy, K. P. (2022). [*Probabilistic Machine Learning: An Introduction*](https://probml.github.io/pml-book/book1.html).
 - Murphy, K. P. (2023). [*Probabilistic Machine Learning: Advanced Topics*](https://probml.github.io/pml-book/book2.html).
 - Jurafsky, D., & Martin, J. H. (2026). [*Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models*](https://web.stanford.edu/~jurafsky/slp3).
-- Hamilton, W. L. (2020). [*Graph Representation Learning*](https://www.cs.mcgill.ca/~wlh/grl_book).
