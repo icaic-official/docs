@@ -43,9 +43,9 @@ nav_order: 2
 | Data preparation and feature engineering | Handle missing values, scale inputs, encode categorical data, construct informative features, and build preprocessing and model pipelines. |
 | Information theory and learning objectives | Measure uncertainty, information shared between variables, and differences between distributions; relate these quantities to learning objectives. |
 | Statistical estimation and uncertainty | Estimate model parameters and predictive uncertainty, incorporate prior knowledge, and account for uncertainty when comparing multiple hypotheses. |
-| Optimization | Use gradients to update model parameters, choose how much data to use per update, and diagnose convergence and numerical stability. |
+| Optimization | Use zeroth-, first-, and second-order information to update parameters, choose how much data to use per update, handle constraints, and diagnose convergence and numerical stability. |
 | Regularization | Control model complexity and overfitting through training constraints, data variation, and validation-based model selection. |
-| Hyperparameter optimization | Explore hyperparameter settings, allocate search budgets, and decide when to stop trials using validation results. |
+| Hyperparameter optimization | Explore hyperparameter settings with efficient search strategies, allocate search budgets, and decide when to stop trials using validation results. |
 | Validation and model evaluation | Separate training, validation, and test data; respect group structure, prevent leakage, isolate the effects of changes, and reproduce experiments. Select metrics for classification, ranking, and regression; assess calibration and subgroup errors. |
 | Class imbalance and cost-sensitive learning | Account for unequal class frequencies and error costs when preparing data, defining objectives, and selecting decision thresholds. |
 | Semi-supervised and weakly supervised learning | Learn from combinations of labeled, unlabeled, and imperfectly labeled data; assess the reliability of supervision and resulting predictions. |
