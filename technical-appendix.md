@@ -16,12 +16,12 @@ This appendix applies to **both the Individual Contest and the Team Contest**. E
 | --- | --- |
 | Contest platform | Provides task statements, datasets, solution submission, final submission selection, and evaluation scores. |
 | Operating system | Ubuntu 26.04 LTS |
-| Main development environment | JupyterLab 4.6, accessed through the internal contest network, with GPU access on the training and evaluation machines. |
+| Main development environment | Visual Studio Code (VS Code) 1.127 in the browser (code-server 4.127), accessed through the internal contest network, with GPU access on the training and evaluation machines. |
 | Python | Python 3.13 |
 
 ## 2. Available Python Packages
 
-The listed version families may change following installation and GPU compatibility testing. Final package versions will be published before the contest. Within each contest, all participants use the same software environment.
+Within each contest, all participants use the same software environment, with the versions below.
 
 | Category | Package | Version family |
 | --- | --- | --- |
@@ -61,9 +61,8 @@ The listed version families may change following installation and GPU compatibil
 | Utilities/training | `pytorch-lightning` | 2.6 |
 | Utilities/training | `pydantic` | 2.13 |
 | Utilities/training | `pyyaml` | 6.0 |
-| Development | `jupyterlab` | 4.6 |
 
-The Python standard library may also be used. Installing additional packages during the contest is prohibited. **TensorFlow and Keras are unavailable.**
+The Python standard library may also be used. Some tasks provide their own tools and packages, preinstalled and described in the task statement. Installing additional packages during the contest is prohibited. **TensorFlow and Keras are unavailable.**
 
 ## 3. Hardware Resources and Pretrained Models
 
@@ -87,7 +86,7 @@ Each individual contestant or team has a dedicated GPU allocation for developmen
 
 ### 3.3. Pretrained Models
 
-There are no pretrained models provided for the contest.
+Approved pretrained models are supplied with the tasks that use them, as part of the task data, and are described in those task statements. Contestants may only use pretrained models explicitly provided by the organizers.
 
 ## 4. Offline Resources
 
@@ -97,8 +96,8 @@ Required datasets and documentation are provided within the contest environment.
 
 | Limit | Rule |
 | --- | --- |
-| Evaluation runtime | Maximum **10 minutes per evaluation run**, unless the task statement explicitly states otherwise |
-| Submissions | Maximum **15 submissions per task per individual contestant or team** |
+| Evaluation runtime | Maximum **15 minutes per evaluation run**, unless the task statement explicitly states otherwise |
+| Submissions | Maximum **30 submissions per task per individual contestant or team** |
 | Upload size | **100 MB hard limit per submission**; tasks may set lower limits |
 
 **Notes:**
