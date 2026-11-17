@@ -42,6 +42,7 @@ Within each contest, all participants use the same software environment, with th
 | Core AI/ML | `spacy` | 3.8 |
 | Core AI/ML | `nltk` | 3.10 |
 | Core AI/ML | `gensim` | 4.4 |
+| Reinforcement learning | `gymnasium` | 1.4 |
 | Data processing | `numpy` | 2.5 |
 | Data processing | `pandas` | 3.0 |
 | Data processing | `scipy` | 1.18 |
