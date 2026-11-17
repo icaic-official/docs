@@ -6,10 +6,7 @@ nav_order: 4
 
 # Technical Appendix
 
-{: .warning }
-> **This appendix is not finalized.** Specifications and limits are provisional. The appendix will be finalized no later than one month before the contest.
-
-**Updated: 21 September 2026.**
+**Updated: 17 November 2026.**
 
 This appendix applies to **both the Individual Contest and the Team Contest**. Each team receives the same resources and limits as one individual contestant.
 
@@ -20,7 +17,6 @@ This appendix applies to **both the Individual Contest and the Team Contest**. E
 | Contest platform | Provides task statements, datasets, solution submission, final submission selection, and evaluation scores. |
 | Operating system | Ubuntu 26.04 LTS |
 | Main development environment | JupyterLab 4.6, accessed through the internal contest network, with GPU access on the training and evaluation machines. |
-| Offline editor | Visual Studio Code (VS Code) 1.138 on contestant laptops, without direct GPU access. |
 | Python | Python 3.13 |
 
 ## 2. Available Python Packages
@@ -77,27 +73,25 @@ Each individual contestant or team receives **one Ubuntu laptop without a GPU**.
 
 ### 3.2. Training and Evaluation Machines
 
-Training and evaluation use **Amazon EC2 `g6.xlarge`** instances:
+Training and evaluation use **Amazon EC2 `g4dn.2xlarge`** instances:
 
 | Resource | Specification |
 | --- | --- |
-| GPU | 1 NVIDIA L4 |
-| GPU memory | 24 GB nominal (approximately 22 GiB) |
-| CPU | 4 vCPUs |
-| System memory | 16 GiB |
-| Local instance storage | 250 GB NVMe SSD |
+| GPU | 1 NVIDIA T4 |
+| GPU memory | 16 GB nominal (approximately 15 GiB) |
+| CPU | 8 vCPUs |
+| System memory | 32 GiB |
+| Local instance storage | 225 GB NVMe SSD |
 
 Each individual contestant or team has a dedicated GPU allocation for development.
 
 ### 3.3. Pretrained Models
 
-The approved pretrained-model list will be published before the contest. Approved checkpoints and their required supporting files will be pre-cached in the contest environment. Contestants may use only models explicitly provided by the organizers. Documentation for approved models will be available offline.
+There are no pretrained models provided for the contest.
 
 ## 4. Offline Resources
 
-Required datasets and documentation are provided within the contest environment.
-
-The tentative plan is to provide offline documentation through DevDocs for all listed packages. The final documentation collection and any additional offline references will be confirmed with the finalized appendix.
+Required datasets and documentation are provided within the contest environment. Offline documentation is available through DevDocs for all listed packages.
 
 ## 5. Submission and Evaluation
 
