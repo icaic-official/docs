@@ -6,10 +6,7 @@ nav_order: 4
 
 # Technical Appendix
 
-{: .warning }
-> **This appendix is not finalized.** Specifications and limits are provisional. The appendix will be finalized no later than one month before the contest.
-
-**Updated: 21 September 2026.**
+**Updated: 17 November 2026.**
 
 This appendix applies to **both the Individual Contest and the Team Contest**. Each team receives the same resources and limits as one individual contestant.
 
@@ -19,13 +16,12 @@ This appendix applies to **both the Individual Contest and the Team Contest**. E
 | --- | --- |
 | Contest platform | Provides task statements, datasets, solution submission, final submission selection, and evaluation scores. |
 | Operating system | Ubuntu 26.04 LTS |
-| Main development environment | JupyterLab 4.6, accessed through the internal contest network, with GPU access on the training and evaluation machines. |
-| Offline editor | Visual Studio Code (VS Code) 1.138 on contestant laptops, without direct GPU access. |
+| Main development environment | Visual Studio Code (VS Code) 1.127 in the browser (code-server 4.127), accessed through the internal contest network, with GPU access on the training and evaluation machines. |
 | Python | Python 3.13 |
 
 ## 2. Available Python Packages
 
-The listed version families may change following installation and GPU compatibility testing. Final package versions will be published before the contest. Within each contest, all participants use the same software environment.
+Within each contest, all participants use the same software environment, with the versions below.
 
 | Category | Package | Version family |
 | --- | --- | --- |
@@ -46,6 +42,7 @@ The listed version families may change following installation and GPU compatibil
 | Core AI/ML | `spacy` | 3.8 |
 | Core AI/ML | `nltk` | 3.10 |
 | Core AI/ML | `gensim` | 4.4 |
+| Reinforcement learning | `gymnasium` | 1.4 |
 | Data processing | `numpy` | 2.5 |
 | Data processing | `pandas` | 3.0 |
 | Data processing | `scipy` | 1.18 |
@@ -65,9 +62,8 @@ The listed version families may change following installation and GPU compatibil
 | Utilities/training | `pytorch-lightning` | 2.6 |
 | Utilities/training | `pydantic` | 2.13 |
 | Utilities/training | `pyyaml` | 6.0 |
-| Development | `jupyterlab` | 4.6 |
 
-The Python standard library may also be used. Installing additional packages during the contest is prohibited. **TensorFlow and Keras are unavailable.**
+The Python standard library may also be used. Some tasks provide their own tools and packages, preinstalled and described in the task statement. Installing additional packages during the contest is prohibited. **TensorFlow and Keras are unavailable.**
 
 ## 3. Hardware Resources and Pretrained Models
 
@@ -77,34 +73,32 @@ Each individual contestant or team receives **one Ubuntu laptop without a GPU**.
 
 ### 3.2. Training and Evaluation Machines
 
-Training and evaluation use **Amazon EC2 `g6.xlarge`** instances:
+Training and evaluation use **Amazon EC2 `g4dn.2xlarge`** instances:
 
 | Resource | Specification |
 | --- | --- |
-| GPU | 1 NVIDIA L4 |
-| GPU memory | 24 GB nominal (approximately 22 GiB) |
-| CPU | 4 vCPUs |
-| System memory | 16 GiB |
-| Local instance storage | 250 GB NVMe SSD |
+| GPU | 1 NVIDIA T4 |
+| GPU memory | 16 GB nominal (approximately 15 GiB) |
+| CPU | 8 vCPUs |
+| System memory | 32 GiB |
+| Local instance storage | 225 GB NVMe SSD |
 
 Each individual contestant or team has a dedicated GPU allocation for development.
 
 ### 3.3. Pretrained Models
 
-The approved pretrained-model list will be published before the contest. Approved checkpoints and their required supporting files will be pre-cached in the contest environment. Contestants may use only models explicitly provided by the organizers. Documentation for approved models will be available offline.
+Approved pretrained models are supplied with the tasks that use them, as part of the task data, and are described in those task statements. Contestants may only use pretrained models explicitly provided by the organizers.
 
 ## 4. Offline Resources
 
-Required datasets and documentation are provided within the contest environment.
-
-The tentative plan is to provide offline documentation through DevDocs for all listed packages. The final documentation collection and any additional offline references will be confirmed with the finalized appendix.
+Required datasets and documentation are provided within the contest environment. Offline documentation is available through DevDocs for all listed packages.
 
 ## 5. Submission and Evaluation
 
 | Limit | Rule |
 | --- | --- |
-| Evaluation runtime | Maximum **10 minutes per evaluation run**, unless the task statement explicitly states otherwise |
-| Submissions | Maximum **15 submissions per task per individual contestant or team** |
+| Evaluation runtime | Maximum **15 minutes per evaluation run**, unless the task statement explicitly states otherwise |
+| Submissions | Maximum **30 submissions per task per individual contestant or team** |
 | Upload size | **100 MB hard limit per submission**; tasks may set lower limits |
 
 **Notes:**
